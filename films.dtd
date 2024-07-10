@@ -1,0 +1,40 @@
+<!ELEMENT CinemaProgramme (Films)>
+<!ELEMENT Films (Film+)>
+<!ELEMENT Film (Titre, Genre, Duree, Realisateur, LangueDiffusion, Acteurs, Annee, Notes?, Synopsis, Horaires+)>
+<!ELEMENT Titre (#PCDATA)>
+<!ELEMENT Genre (#PCDATA)>
+<!ELEMENT Duree (#PCDATA)>
+<!ELEMENT Realisateur (#PCDATA)>
+<!ELEMENT LangueDiffusion (#PCDATA)>
+<!ELEMENT Acteurs (Acteur+)>
+<!ELEMENT Acteur (#PCDATA)>
+<!ELEMENT Annee (#PCDATA)>
+<!ELEMENT Notes (Presse?, Spectateurs?)>
+<!ELEMENT Presse (#PCDATA)>
+<!ELEMENT Spectateurs (#PCDATA)>
+<!ELEMENT Synopsis (#PCDATA)>
+<!ELEMENT Horaires (Jour+)>
+<!ELEMENT Jour (Heure+)>
+<!ATTLIST Jour nom CDATA #REQUIRED>
+<!ELEMENT Heure (#PCDATA)>
+
+
+<!ELEMENT CinemaProgramme (Films)>
+<!ELEMENT Films (Film)>
+<!ELEMENT Film (Titre, (Genre | Duree | Realisateur | LangueDiffusion | Acteurs | Annee | Notes | Synopsis | Horaires)*)>
+<!ELEMENT Titre (#PCDATA)>
+<!ELEMENT Genre (#PCDATA)>
+<!ELEMENT Duree (#PCDATA)>
+<!ELEMENT Realisateur (#PCDATA)>
+<!ELEMENT LangueDiffusion (#PCDATA)>
+<!ELEMENT Acteurs (Acteur+)>
+<!ELEMENT Acteur (#PCDATA)>
+<!ELEMENT Annee (#PCDATA)>
+<!ELEMENT Notes (Presse?, Spectateurs?)>
+<!ELEMENT Presse (#PCDATA)>
+<!ELEMENT Spectateurs (#PCDATA)>
+<!ELEMENT Synopsis (#PCDATA)>
+<!ELEMENT Horaires (Jour+)>
+<!ELEMENT Jour (Heure+)>
+<!ATTLIST Jour nom CDATA #REQUIRED>
+<!ELEMENT Heure (#PCDATA)>

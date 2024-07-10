@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<!-- 1. Arbre XML pour le film "Les Brigades du Tigre"  -->
+<CinemaProgramme>
+    <Films>
+        <Film>
+            <Titre>Les Brigades du Tigre</Titre>
+            <Duree>2h 5min</Duree>
+            <Genre>Policier</Genre>
+            <Realisateur>J&#xE9;r&#xF4;me Cornuau</Realisateur>
+            <LangueDiffusion>VF (en Fran&#xE7;ais)</LangueDiffusion>
+            <Acteurs>
+                <Acteur>C. Cornillac</Acteur>
+                <Acteur>D. Kruger</Acteur>
+                <Acteur>E. Baer</Acteur>
+            </Acteurs>
+            <Annee>2005</Annee>
+            <Notes>
+                <Presse>3/5</Presse>
+                <Spectateurs>4/5</Spectateurs>
+            </Notes>
+            <Synopsis>Les aventures du commissaire Valentin et des inspecteurs Terrasson et Pujol, membres des Brigades mobiles, corps sp&#xE9;cial de la police fran&#xE7;aise cr&#xE9;&#xE9; avant la Premi&#xE8;re Guerre mondiale.</Synopsis>
+            <Horaires>
+                <Jour nom="Mer">
+                    <Heure>14:00</Heure>
+                    <Heure>16:40</Heure>
+                    <Heure>19:40</Heure>
+                    <Heure>22:10</Heure>
+                </Jour>
+                <Jour nom="Sam">
+                    <Heure>14:00</Heure>
+                    <Heure>16:40</Heure>
+                    <Heure>19:40</Heure>
+                    <Heure>22:10</Heure>
+                </Jour>
+                <Jour nom="Jeu">
+                    <Heure>14:00</Heure>
+                    <Heure>19:40</Heure>
+                    <Heure>22:10</Heure>
+                </Jour>
+                <Jour nom="Ven">
+                    <Heure>14:00</Heure>
+                    <Heure>19:40</Heure>
+                    <Heure>22:10</Heure>
+                </Jour>
+                <Jour nom="Lun">
+                    <Heure>14:00</Heure>
+                    <Heure>19:40</Heure>
+                    <Heure>22:10</Heure>
+                </Jour>
+                <Jour nom="Mar">
+                    <Heure>14:00</Heure>
+                    <Heure>19:40</Heure>
+                    <Heure>22:10</Heure>
+                </Jour>
+                <Jour nom="Dim">
+                    <Heure>10:20</Heure>
+                    <Heure>14:00</Heure>
+                    <Heure>16:40</Heure>
+                    <Heure>20:20</Heure>
+                </Jour>
+            </Horaires>
+        </Film>
+        <Film>
+            <Titre>Le Fabuleux Destin d'Am&#xE9;lie Poulain</Titre>
+            <Duree>2h 2min</Duree>
+            <Genre>Com&#xE9;die</Genre>
+            <Realisateur>Jean-Pierre Jeunet</Realisateur>
+            <LangueDiffusion>VF (en Fran&#xE7;ais)</LangueDiffusion>
+            <Acteurs>
+                <Acteur>Audrey Tautou</Acteur>
+                <Acteur>Mathieu Kassovitz</Acteur>
+                <Acteur>Rufus</Acteur>
+            </Acteurs>
+            <Annee>2001</Annee>
+            <Notes>
+                <Presse>4/5</Presse>
+                <Spectateurs>4.5/5</Spectateurs>
+            </Notes>
+            <Synopsis>Am&#xE9;lie, une jeune serveuse dans un caf&#xE9; de Montmartre, d&#xE9;cide de changer la vie de ceux qui l'entourent.</Synopsis>
+            <Horaires>
+                <Jour nom="Mer">
+                    <Heure>14:00</Heure>
+                    <Heure>17:00</Heure>
+                    <Heure>20:00</Heure>
+                </Jour>
+                <Jour nom="Sam">
+                    <Heure>14:00</Heure>
+                    <Heure>17:00</Heure>
+                    <Heure>20:00</Heure>
+                </Jour>
+                <Jour nom="Jeu">
+                    <Heure>14:00</Heure>
+                    <Heure>17:00</Heure>
+                    <Heure>20:00</Heure>
+                </Jour>
+                <Jour nom="Dim">
+                    <Heure>10:00</Heure>
+                    <Heure>14:00</Heure>
+                    <Heure>17:00</Heure>
+                </Jour>
+            </Horaires>
+        </Film>
+        <Film>
+            <Titre>Intouchables</Titre>
+            <Duree>1h 52min</Duree>
+            <Genre>Drame</Genre>
+            <Realisateur>Olivier Nakache et &#xC9;ric Toledano</Realisateur>
+            <LangueDiffusion>VF (en Fran&#xE7;ais)</LangueDiffusion>
+            <Acteurs>
+                <Acteur>Fran&#xE7;ois Cluzet</Acteur>
+                <Acteur>Omar Sy</Acteur>
+            </Acteurs>
+            <Annee>2011</Annee>
+            <Notes>
+                <Presse>4.5/5</Presse>
+                <Spectateurs>4.8/5</Spectateurs>
+            </Notes>
+            <Synopsis>La relation d'amiti&#xE9; entre un riche t&#xE9;trapl&#xE9;gique et son aide &#xE0; domicile issu de la banlieue.</Synopsis>
+            <Horaires>
+                <Jour nom="Ven">
+                    <Heure>14:00</Heure>
+                    <Heure>16:40</Heure>
+                    <Heure>19:00</Heure>
+                    <Heure>21:30</Heure>
+                </Jour>
+                <Jour nom="Sam">
+                    <Heure>14:00</Heure>
+                    <Heure>16:40</Heure>
+                    <Heure>19:00</Heure>
+                    <Heure>21:30</Heure>
+                </Jour>
+                <Jour nom="Dim">
+                    <Heure>10:00</Heure>
+                    <Heure>14:00</Heure>
+                    <Heure>16:40</Heure>
+                    <Heure>19:00</Heure>
+                </Jour>
+            </Horaires>
+        </Film>
+        <Film>
+            <Titre>La La Land</Titre>
+            <Duree>2h 8min</Duree>
+            <Genre>Musical</Genre>
+            <Realisateur>Damien Chazelle</Realisateur>
+            <LangueDiffusion>VO (en Anglais)</LangueDiffusion>
+            <Acteurs>
+                <Acteur>Ryan Gosling</Acteur>
+                <Acteur>Emma Stone</Acteur>
+            </Acteurs>
+            <Annee>2016</Annee>
+            <Notes>
+                <Presse>4.2/5</Presse>
+                <Spectateurs>4.3/5</Spectateurs>
+            </Notes>
+            <Synopsis>Une histoire d'amour entre une actrice en herbe et un pianiste de jazz &#xE0; Los Angeles.</Synopsis>
+            <Horaires>
+                <Jour nom="Jeu">
+                    <Heure>14:00</Heure>
+                    <Heure>17:00</Heure>
+                    <Heure>20:00</Heure>
+                </Jour>
+                <Jour nom="Ven">
+                    <Heure>14:00</Heure>
+                    <Heure>17:00</Heure>
+                    <Heure>20:00</Heure>
+                </Jour>
+                <Jour nom="Sam">
+                    <Heure>10:00</Heure>
+                    <Heure>14:00</Heure>
+                    <Heure>17:00</Heure>
+                    <Heure>20:00</Heure>
+                </Jour>
+                <Jour nom="Dim">
+                    <Heure>10:00</Heure>
+                    <Heure>14:00</Heure>
+                    <Heure>17:00</Heure>
+                    <Heure>20:00</Heure>
+                </Jour>
+            </Horaires>
+        </Film>
+        <Film>
+            <Titre>Parasite</Titre>
+            <Duree>2h 12min</Duree>
+            <Genre>Thriller</Genre>
+            <Realisateur>Bong Joon-ho</Realisateur>
+            <LangueDiffusion>VO (en Cor&#xE9;en)</LangueDiffusion>
+            <Acteurs>
+                <Acteur>Song Kang-ho</Acteur>
+                <Acteur>Lee Sun-kyun</Acteur>
+            </Acteurs>
+            <Annee>2019</Annee>
+            <Notes>
+                <Presse>4.6/5</Presse>
+                <Spectateurs>4.7/5</Spectateurs>
+            </Notes>
+            <Synopsis>La rencontre entre deux familles de classes sociales tr&#xE8;s diff&#xE9;rentes.</Synopsis>
+            <Horaires>
+                <Jour nom="Mer">
+                    <Heure>14:00</Heure>
+                    <Heure>17:00</Heure>
+                    <Heure>20:00</Heure>
+                </Jour>
+                <Jour nom="Ven">
+                    <Heure>14:00</Heure>
+                    <Heure>17:00</Heure>
+                    <Heure>20:00</Heure>
+                </Jour>
+                <Jour nom="Dim">
+                    <Heure>10:00</Heure>
+                    <Heure>14:00</Heure>
+                    <Heure>17:00</Heure>
+                    <Heure>20:00</Heure>
+                </Jour>
+            </Horaires>
+        </Film>
+    </Films>
+<film><titre>Sama titre</titre><duree>23</duree><genre>zzzzzzz</genre><realisateur>zzzzz</realisateur><annee>1234</annee><synopsis>azertyuiop</synopsis></film><film><titre>ttttttt</titre><duree>rrrrrrrr</duree><genre>rrrrrrrrrrr</genre><realisateur>rrrrrrrrrr</realisateur><annee>1234</annee><synopsis>12E3654</synopsis></film><film id="668edf3cd2f3f"><titre>aaaaaaa</titre><duree>zzzzzzzz</duree><genre>zzzzzzzzzz</genre><realisateur>zzzzzzzzzz</realisateur><annee>zzzzzzzzzz</annee><synopsis>zzzzzzzzz</synopsis></film><film id="668ee1e7a0e73"><titre>yyyyyyyyyyyyy</titre><duree>sssssssss</duree><genre>zssssssss</genre><realisateur>sssssssss</realisateur><annee>sssssssss</annee><synopsis>sssssss</synopsis></film><film id="668ee4d71fbb2"><titre>Sama titre</titre><duree>23</duree><genre>rrrrrrrrrrr</genre><realisateur>sssssssss</realisateur><annee>vvvvvvv</annee><synopsis>aaaaaaaa</synopsis></film><film id="668ee7dff37ab"><titre>gggg</titre><duree>fffffffff</duree><genre>ffffffff</genre><realisateur>fffffffffff</realisateur><annee>fffffffff</annee><synopsis>fffffffffffff</synopsis></film><film id="668ee80613c3f"><titre>uuuuuuuuuu</titre><duree>uuuuuuuuuu</duree><genre>uuuuuuuuuu</genre><realisateur>uuuuuuuuuu</realisateur><annee>uuuuuuuuuu</annee><synopsis>uuuuuuuuuu</synopsis></film></CinemaProgramme>
