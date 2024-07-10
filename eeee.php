@@ -1,3 +1,60 @@
+<?php
+include 'config/xml_config.php';
+
+// Gestion de la modification d'un film
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET['id'])) {
+    $id = $_GET['id'];
+
+    // Vérifiez si l'ID est numérique et valide
+    if (!is_numeric($id)) {
+        die('Erreur : ID de film non valide.');
+    }
+
+    // Récupération des données du formulaire
+    $titre = $_POST['titre'];
+    $duree = $_POST['duree'];
+    $genre = $_POST['genre'];
+    $realisateur = $_POST['realisateur'];
+    $annee = $_POST['annee'];
+    $synopsis = $_POST['synopsis'];
+
+    // Validation des données (assurez-vous qu'aucun champ n'est vide par exemple)
+    if (empty($titre) || empty($duree) || empty($genre) || empty($realisateur) || empty($annee) || empty($synopsis)) {
+        die('Erreur : Les données du film sont incomplètes.');
+    }
+
+    // Traitement de la modification du film dans le fichier XML (exemple)
+    $films = simplexml_load_file('films.xml'); // Charger le fichier XML
+
+    // Recherche du film par son ID pour la modification
+    $filmFound = false;
+    foreach ($films->Film as $film) {
+        if ($film->id == $id) {
+            $film->Titre = $titre;
+            $film->Duree = $duree;
+            $film->Genre = $genre;
+            $film->Realisateur = $realisateur;
+            $film->Annee = $annee;
+            $film->Synopsis = $synopsis;
+            $filmFound = true;
+            break;
+        }
+    }
+
+    if (!$filmFound) {
+        die('Erreur : Film non trouvé pour la modification.');
+    }
+
+    // Sauvegarde des modifications dans le fichier XML
+    $films->asXML('films.xml');
+
+    // Réponse de succès
+    echo json_encode(array('message' => 'Film modifié avec succès.'));
+    exit();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -8,8 +65,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <?php include 'config/xml_config.php'; ?>
-
+    
     <div class="container-xl">
         <div class="table-responsive">
             <div class="table-wrapper">
@@ -26,7 +82,6 @@
                 <table class="table table-striped table-hover">
                     <thead>
                         <tr>
-                            <th>ID</th>
                             <th>Titre</th>
                             <th>Durée</th>
                             <th>Genre</th>
@@ -59,7 +114,7 @@
     <div id="addFilmModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form id="filmForm" method="POST" action="add_film.php">
+                <form id="filmForm" method="POST" action="add_edit_film.php">
                     <div class="modal-header">
                         <h4 class="modal-title">Ajouter un Film</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -106,59 +161,92 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script>
-document.addEventListener('DOMContentLoaded', function() {
-    function loadFilms() {
-        fetch('get_films.php')
-            .then(response => response.json())
-            .then(data => {
-                const filmsTable = document.querySelector('tbody');
-                filmsTable.innerHTML = '';
-                data.forEach(film => {
-                    const row = document.createElement('tr');
-                    row.innerHTML = `
-                        <td>${film.id}</td>
-                        <td>${film.Titre}</td>
-                        <td>${film.Duree}</td>
-                        <td>${film.Genre}</td>
-                        <td>${film.Realisateur}</td>
-                        <td>${film.Annee}</td>
-                        <td>${film.Synopsis}</td>
-                        <td>
-                            <button class="btn btn-info btn-sm edit-film-btn" data-id="${film.id}">Modifier</button>
-                            <button class="btn btn-danger btn-sm" onclick="deleteFilm(${film.id})">Supprimer</button>
-                        </td>`;
-                    filmsTable.appendChild(row);
-                });
-            })
-            .catch(error => console.error('Erreur lors du chargement des films:', error));
-    }
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fonction pour charger les films depuis le fichier XML
+            function loadFilmsFromXML() {
+                fetch('films.xml') // Chemin vers votre fichier XML
+                    .then(response => response.text())
+                    .then(xmlString => {
+                        const parser = new DOMParser();
+                        const xmlDoc = parser.parseFromString(xmlString, 'text/xml');
+                        const films = xmlDoc.getElementsByTagName('Film');
 
-    loadFilms();
+                        const filmsData = [];
+                        for (let film of films) {
+                            const titre = film.getElementsByTagName('Titre')[0].textContent;
+                            const duree = film.getElementsByTagName('Duree')[0].textContent;
+                            const genre = film.getElementsByTagName('Genre')[0].textContent;
+                            const realisateur = film.getElementsByTagName('Realisateur')[0].textContent;
+                            const annee = film.getElementsByTagName('Annee')[0].textContent;
+                            const synopsis = film.getElementsByTagName('Synopsis')[0].textContent;
 
-    function deleteFilm(id) {
-        if (confirm('Êtes-vous sûr de vouloir supprimer ce film?')) {
-            fetch('delete_film.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: `id=${id}`
-            })
-            .then(response => {
-                if (response.ok) {
-                    document.getElementById('message').innerText = 'Film supprimé avec succès.';
-                    loadFilms();
-                } else {
-                    throw new Error('Erreur lors de la suppression du film.');
+                            filmsData.push({
+                                Titre: titre,
+                                Duree: duree,
+                                Genre: genre,
+                                Realisateur: realisateur,
+                                Annee: annee,
+                                Synopsis: synopsis
+                            });
+                        }
+
+                        return filmsData;
+                    })
+                    .then(filmsData => {
+                        const filmsTable = document.querySelector('tbody');
+                        filmsTable.innerHTML = '';
+                        filmsData.forEach(film => {
+                            const row = document.createElement('tr');
+                            row.innerHTML = `
+                                <td>${film.Titre}</td>
+                                <td>${film.Duree}</td>
+                                <td>${film.Genre}</td>
+                                <td>${film.Realisateur}</td>
+                                <td>${film.Annee}</td>
+                                <td>${film.Synopsis}</td>
+                                <td>
+                                    <button class="btn btn-info btn-sm edit-film-btn" data-id="${film.id}">Modifier</button>
+                                    <button class="btn btn-danger btn-sm" onclick="deleteFilm(${film.id})">Supprimer</button>
+                                </td>`;
+                            filmsTable.appendChild(row);
+                        });
+                    })
+                    .catch(error => console.error('Erreur lors du chargement des films depuis le XML:', error));
+            }
+
+            loadFilmsFromXML();
+
+            // Fonction pour supprimer un film
+            function deleteFilm(id) {
+                if (confirm('Êtes-vous sûr de vouloir supprimer ce film?')) {
+                    fetch('delete_film.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: `id=${id}`
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            document.getElementById('message').innerText = 'Film supprimé avec succès.';
+                            loadFilmsFromXML();
+                        } else {
+                            throw new Error('Erreur lors de la suppression du film.');
+                        }
+                    })
+                    .catch(error => console.error('Erreur:', error));
                 }
-            })
-            .catch(error => console.error('Erreur:', error));
-        }
-    }
+            }
 
-    function editFilm(id) {
-    fetch(`edit_film.php?id=${id}`)
-    .then(response => response.json())
+            // Fonction pour pré-remplir le formulaire de modification de film
+            function editFilm(id) {
+    fetch(`get_film.php?id=${id}`)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Erreur HTTP ' + response.status);
+        }
+        return response.json();
+    })
     .then(film => {
         if (film && film.id) {
             document.getElementById('titre').value = film.Titre;
@@ -176,48 +264,31 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Erreur: les données du film sont manquantes.');
         }
     })
-    .catch(error => console.error('Erreur:', error));
+    .catch(error => {
+        console.error('Erreur:', error);
+        alert('Erreur lors de la récupération des données du film.');
+    });
 }
 
 
-    $('#addFilmModal').on('hidden.bs.modal', function () {
-        document.getElementById('filmForm').reset();
-        document.getElementById('filmForm').setAttribute('action', 'add_film.php');
-        document.querySelector('button[type="submit"]').innerText = 'Ajouter';
-    });
 
-    document.getElementById('filmForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const formData = new FormData(this);
-        const action = this.getAttribute('action');
 
-        fetch(action, {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => {
-            if (response.ok) {
-                $('#addFilmModal').modal('hide');
-                loadFilms();
-                // Récupérer l'ID du film ajouté à partir de l'URL
-                const urlParams = new URLSearchParams(window.location.search);
-                const id = urlParams.get('id');
-                document.getElementById('message').innerText = `Film ajouté avec succès. ID: ${id}`;
-            } else {
-                throw new Error('Erreur lors de l\'ajout/modification du film.');
-            }
-        })
-        .catch(error => console.error('Erreur:', error));
-    });
+            // Associer l'événement de clic aux boutons de modification
+            document.addEventListener('click', function(event) {
+                if (event.target.classList.contains('edit-film-btn')) {
+                    const filmId = event.target.getAttribute('data-id');
+                    editFilm(filmId);
+                }
+            });
 
-    document.querySelector('tbody').addEventListener('click', function(event) {
-        if (event.target.classList.contains('edit-film-btn')) {
-            const filmId = event.target.getAttribute('data-id');
-            editFilm(filmId);
-        }
-    });
-});
-</script>
+            // Réinitialiser le formulaire d'ajout de film lorsque la modale est fermée
+            $('#addFilmModal').on('hidden.bs.modal', function() {
+                document.getElementById('filmForm').reset();
+                const form = document.getElementById('filmForm');
+                form.setAttribute('action', 'add_edit_film.php');
+                form.querySelector('button[type="submit"]').innerText = 'Ajouter';
+            });
+        });
+    </script>
 </body>
 </html>
-

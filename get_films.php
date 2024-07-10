@@ -1,29 +1,23 @@
 <?php
 include 'config/xml_config.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    // Charger le fichier XML
-    $xml = loadXMLData();
+// Charger tous les films à partir du fichier XML
+$films = simplexml_load_file($filmsPath);
 
-    $films = [];
+$jsonData = [];
 
-    foreach ($xml->film as $film) {
-        $filmData = [
-            'id' => (int)$film['id'],
-            'Titre' => (string)$film->titre,
-            'Duree' => (string)$film->duree,
-            'Genre' => (string)$film->genre,
-            'Realisateur' => (string)$film->realisateur,
-            'Annee' => (string)$film->annee,
-            'Synopsis' => (string)$film->synopsis
-        ];
-
-        $films[] = $filmData;
-    }
-
-    echo json_encode($films);
-} else {
-    http_response_code(405); // Method Not Allowed
-    echo json_encode(array("message" => "Méthode non autorisée."));
+foreach ($films->film as $film) {
+    $jsonData[] = [
+        'id' => (int)$film->id,
+        'Titre' => (string)$film->titre,
+        'Duree' => (string)$film->duree,
+        'Genre' => (string)$film->genre,
+        'Realisateur' => (string)$film->realisateur,
+        'Annee' => (int)$film->annee,
+        'Synopsis' => (string)$film->synopsis
+    ];
 }
+
+header('Content-Type: application/json');
+echo json_encode($jsonData);
 ?>
