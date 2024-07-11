@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE restaurants SYSTEM "restaurants.dtd">
+<restaurants>
+  <restaurant>
+    <nom>Le Gourmet</nom>
+    <adresse>123 Rue de Paris, 75000 Paris, France</adresse>
+    <restaurateur>Jean Dupont</restaurateur>
+    <description>
+      Un restaurant gastronomique situé au cœur de Paris. Nous proposons une cuisine raffinée et 
+      élégante avec des produits frais et de saison.
+    </description>
+    <images>
+      <image>https://example.com/images/restaurant1.jpg</image>
+    </images>
+    <carte>
+      <plat>
+        <nom>Foie Gras</nom>
+        <partie>Entrée</partie>
+        <prix>25.00 EUR</prix>
+        <description>Foie gras de canard servi avec une confiture de figues.</description>
+      </plat>
+      <plat>
+        <nom>Filet de Boeuf</nom>
+        <partie>Plat</partie>
+        <prix>35.00 EUR</prix>
+        <description>Filet de boeuf grillé avec une sauce au poivre.</description>
+      </plat>
+      <plat>
+        <nom>Crème Brûlée</nom>
+        <partie>Dessert</partie>
+        <prix>10.00 EUR</prix>
+        <description>Crème brûlée à la vanille.</description>
+      </plat>
+    </carte>
+    <menus>
+      <menu>
+        <titre>Menu Dégustation</titre>
+        <prix>75.00 EUR</prix>
+        <elements>
+          <plat>
+            <nom>Foie Gras</nom>
+            <partie>Entrée</partie>
+            <prix>25.00 EUR</prix>
+            <description>Foie gras de canard servi avec une confiture de figues.</description>
+          </plat>
+          <plat>
+            <nom>Filet de Boeuf</nom>
+            <partie>Plat</partie>
+            <prix>35.00 EUR</prix>
+            <description>Filet de boeuf grillé avec une sauce au poivre.</description>
+          </plat>
+          <plat>
+            <nom>Crème Brûlée</nom>
+            <partie>Dessert</partie>
+            <prix>10.00 EUR</prix>
+            <description>Crème brûlée à la vanille.</description>
+          </plat>
+        </elements>
+      </menu>
+    </menus>
+  </restaurant>
+  
+  <restaurant>
+    <nom>La Belle Époque</nom>
+    <adresse>45 Avenue des Champs-Élysées, 75008 Paris, France</adresse>
+    <restaurateur>Marie Dubois</restaurateur>
+    <description>
+      Un restaurant traditionnel offrant une cuisine française classique dans un cadre élégant et historique.
+    </description>
+    <images>
+      <image>https://example.com/images/restaurant2.jpg</image>
+    </images>
+    <carte>
+      <plat>
+        <nom>Soupe à l'oignon</nom>
+        <partie>Entrée</partie>
+        <prix>15.00 EUR</prix>
+        <description>Soupe à l'oignon gratinée.</description>
+      </plat>
+      <plat>
+        <nom>Coq au Vin</nom>
+        <partie>Plat</partie>
+        <prix>30.00 EUR</prix>
+        <description>Coq braisé au vin rouge avec des légumes de saison.</description>
+      </plat>
+      <plat>
+        <nom>Tarte Tatin</nom>
+        <partie>Dessert</partie>
+        <prix>12.00 EUR</prix>
+        <description>Tarte aux pommes caramélisées.</description>
+      </plat>
+    </carte>
+    <menus>
+      <menu>
+        <titre>Menu Tradition</titre>
+        <prix>60.00 EUR</prix>
+        <elements>
+          <plat>
+            <nom>Soupe à l'oignon</nom>
+            <partie>Entrée</partie>
+            <prix>15.00 EUR</prix>
+            <description>Soupe à l'oignon gratinée.</description>
+          </plat>
+          <plat>
+            <nom>Coq au Vin</nom>
+            <partie>Plat</partie>
+            <prix>30.00 EUR</prix>
+            <description>Coq braisé au vin rouge avec des légumes de saison.</description>
+          </plat>
+          <plat>
+            <nom>Tarte Tatin</nom>
+            <partie>Dessert</partie>
+            <prix>12.00 EUR</prix>
+            <description>Tarte aux pommes caramélisées.</description>
+          </plat>
+        </elements>
+      </menu>
+    </menus>
+  </restaurant>
+  
+  <restaurant>
+    <nom>Chez Pierre</nom>
+    <adresse>78 Rue de Rivoli, 75001 Paris, France</adresse>
+    <restaurateur>Pierre Martin</restaurateur>
+    <description>
+      Un bistrot convivial proposant une cuisine française authentique avec une touche moderne.
+    </description>
+    <images>
+      <image>https://example.com/images/restaurant3.jpg</image>
+    </images>
+    <carte>
+      <plat>
+        <nom>Escargots</nom>
+        <partie>Entrée</partie>
+        <prix>18.00 EUR</prix>
+        <description>Escargots de Bourgogne au beurre persillé.</description>
+      </plat>
+      <plat>
+        <nom>Magret de Canard</nom>
+        <partie>Plat</partie>
+        <prix>28.00 EUR</prix>
+        <description>Magret de canard rôti avec une sauce aux fruits rouges.</description>
+      </plat>
+      <plat>
+        <nom>Mousse au Chocolat</nom>
+        <partie>Dessert</partie>
+        <prix>9.00 EUR</prix>
+        <description>Mousse au chocolat noir.</description>
+      </plat>
+    </carte>
+    <menus>
+      <menu>
+        <titre>Menu Gourmand</titre>
+        <prix>65.00 EUR</prix>
+        <elements>
+          <plat>
+            <nom>Escargots</nom>
+            <partie>Entrée</partie>
+            <prix>18.00 EUR</prix>
+            <description>Escargots de Bourgogne au beurre persillé.</description>
+          </plat>
+          <plat>
+            <nom>Magret de Canard</nom>
+            <partie>Plat</partie>
+            <prix>28.00 EUR</prix>
+            <description>Magret de canard rôti avec une sauce aux fruits rouges.</description>
+          </plat>
+          <plat>
+            <nom>Mousse au Chocolat</nom>
+            <partie>Dessert</partie>
+            <prix>9.00 EUR</prix>
+            <description>Mousse au chocolat noir.</description>
+          </plat>
+        </elements>
+      </menu>
+    </menus>
+  </restaurant>
+</restaurants>

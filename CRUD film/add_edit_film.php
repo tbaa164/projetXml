@@ -8,7 +8,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $realisateur = $_POST['realisateur'];
     
     // Exemple de validation : vérification si les données ne sont pas vides
-    if (empty($id) || empty($titre) || empty($genre) || empty($realisateur)) {
+    // if (empty($id) || empty($titre) || empty($genre) || empty($realisateur)) {
+    if (empty($titre) || empty($genre) || empty($realisateur)) {
         die('Erreur : Tous les champs sont obligatoires.');
     }
     
