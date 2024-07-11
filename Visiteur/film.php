@@ -475,6 +475,14 @@
                     <p>C. Cornillac, D. Kruger, E. Baer</p>
                 </div>
             </div>
+            <div class="grid grid-cols-2 my-4">
+                <div class="col-span-2 flex justify-center items-center">
+                    <img class="w-6 h-6 mr-2" src=".\..\assets\star-svgrepo-com.png" alt="">
+                    <p>Notes : </p>
+                </div>
+                <div> <span class="font-bold">Presse : </span>3/5</div>
+                <div> <span class="font-bold">Spectateurs : </span>4/5</div>
+            </div>
 
             <div class="m-4">
                 <div class="card text-center border rounded-lg shadow-lg">
