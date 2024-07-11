@@ -58,6 +58,11 @@
                 <Heure>20:20</Heure>
             </Jour>
         </Horaires>
+        <Images>
+            <ImagePrincipale>https://i.pinimg.com/564x/68/ea/02/68ea02c1baf2a8477216cf401bb378ae.jpg</ImagePrincipale>
+            <Image>https://i.pinimg.com/564x/68/ea/02/68ea02c1baf2a8477216cf401bb378ae.jpg</Image>
+            <Image>https://i.pinimg.com/564x/0e/43/42/0e4342ea9f060af9e7438a6fa943d213.jpg</Image>
+        </Images>
     </Film>
     <Film>
         <Titre>Le Fabuleux Destin d'Am&#xE9;lie Poulain</Titre>
@@ -98,6 +103,11 @@
                 <Heure>17:00</Heure>
             </Jour>
         </Horaires>
+        <Images>
+            <ImagePrincipale>https://i.pinimg.com/564x/95/5e/4d/955e4d082a09f5050740fc97e3d938dc.jpg</ImagePrincipale>
+            <Image>https://i.pinimg.com/736x/a4/21/cf/a421cf685111b6efb4b9e1aeb57a7c35.jpg</Image>
+            <Image>https://i.pinimg.com/564x/e9/0c/98/e90c98b211d04ed351625f72899f583c.jpg</Image>
+        </Images>
     </Film>
     <Film>
         <Titre>Intouchables</Titre>
@@ -135,6 +145,11 @@
                 <Heure>19:00</Heure>
             </Jour>
         </Horaires>
+        <Images>
+            <ImagePrincipale>https://i.pinimg.com/564x/22/fd/22/22fd223f016b3d61d53771862ebb4968.jpg</ImagePrincipale>
+            <Image>https://i.pinimg.com/564x/de/69/be/de69be04c2aee81430c62eb06e24d05a.jpg</Image>
+            <Image>https://i.pinimg.com/564x/6f/11/96/6f1196105319908213cfafd4310cedc4.jpg</Image>
+        </Images>
     </Film>
     <Film>
         <Titre>La La Land</Titre>
@@ -176,6 +191,11 @@
                 <Heure>20:00</Heure>
             </Jour>
         </Horaires>
+        <Images>
+            <ImagePrincipale>https://i.pinimg.com/564x/a3/fe/19/a3fe1953058d51294b8c061a9f76ead7.jpg</ImagePrincipale>
+            <Image>https://i.pinimg.com/564x/39/3e/74/393e748b25e97b1e356bb63aa0443721.jpg</Image>
+            <Image>https://i.pinimg.com/564x/fa/2d/77/fa2d772658d3c30db5ca9373d9595210.jpg</Image>
+        </Images>
     </Film>
     <Film>
         <Titre>Parasite</Titre>
@@ -211,6 +231,11 @@
                 <Heure>20:00</Heure>
             </Jour>
         </Horaires>
+        <Images>
+            <ImagePrincipale>https://i.pinimg.com/564x/e6/de/03/e6de035cd3307b513e9bfe88a1457826.jpg</ImagePrincipale>
+            <Image>https://i.pinimg.com/564x/c4/e0/9d/c4e09d45f070ff6776ed4a125cf728ee.jpg</Image>
+            <Image>https://i.pinimg.com/564x/72/ec/eb/72ecebfc66ad5068ccda8ad2b62942ee.jpg</Image>
+        </Images>
     </Film>
     <Film id="668f25e783207"><Titre>Iron man</Titre><Duree>2h 30</Duree><Genre>Action</Genre><Realisateur>James Gunn</Realisateur><Annee>2008</Annee><Synopsis>aegrwethr</Synopsis></Film>
 </Films>

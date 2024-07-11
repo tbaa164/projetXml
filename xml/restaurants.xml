@@ -10,7 +10,7 @@
       élégante avec des produits frais et de saison.
     </description>
     <images>
-      <image>https://example.com/images/restaurant1.jpg</image>
+      <image>https://i.pinimg.com/736x/e5/48/7a/e5487a70a493246eb388dc5485d8dade.jpg</image>
     </images>
     <carte>
       <plat>
@@ -68,7 +68,7 @@
       Un restaurant traditionnel offrant une cuisine française classique dans un cadre élégant et historique.
     </description>
     <images>
-      <image>https://example.com/images/restaurant2.jpg</image>
+      <image>https://i.pinimg.com/564x/ff/3e/70/ff3e70f485d5c59886256d78d10c2949.jpg</image>
     </images>
     <carte>
       <plat>
@@ -112,6 +112,7 @@
             <partie>Dessert</partie>
             <prix>12.00 EUR</prix>
             <description>Tarte aux pommes caramélisées.</description>
+
           </plat>
         </elements>
       </menu>
@@ -126,7 +127,7 @@
       Un bistrot convivial proposant une cuisine française authentique avec une touche moderne.
     </description>
     <images>
-      <image>https://example.com/images/restaurant3.jpg</image>
+      <image>https://i.pinimg.com/564x/56/00/f4/5600f4d05244401a0782893785341dbd.jpg</image>
     </images>
     <carte>
       <plat>

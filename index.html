@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .welcome-text {
+            font-size: 4rem;
+            color: #343a40;
+            font-family: 'Brush Script MT', cursive;
+        }
+    </style>
+</head>
+<body class="h-screen m-0 bg-gray-100">
+    <!-- Navigation Bar -->
+    <nav class="">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a class="text-xl font-bold" href="#"></a>
+            <a href="#" class="inline-block text-2xl bg-yellow-500 text-white py-2 px-4 rounded  hover:bg-yellow-700">Administrateur</a>
+        </div>
+    </nav>
+
+    <!-- Welcome Message -->
+    <div class="flex flex-col justify-center items-center h-4/5">
+        <div class="welcome-text text-center mb-8">
+            Welcome dear customer!
+        </div>
+        <div class="flex space-x-4">
+            <!-- Cinema Card -->
+            <div class="max-w-sm rounded overflow-hidden shadow-lg p-4">
+                <img src="./assets/film-camera-svgrepo-com.png" alt="Cinema Image">
+                <div class="px-6 py-4 text-center">
+                    <div class="font-bold text-xl mb-2">Cinéma</div>
+                    <p></p>
+                    <a href="./Visiteur/fim.php" class="inline-block bg-yellow-500 text-white py-2 px-4 rounded  hover:bg-yellow-700">Voir le programme</a>
+                </div>
+            </div>
+            <!-- Restaurants Card -->
+            <div class="max-w-sm rounded overflow-hidden shadow-lg p-4">
+                <img class="w-full" src="./assets/food-2-svgrepo-com.png" alt="Restaurants Image">
+                <div class="px-6 py-4 text-center">
+                    <div class="font-bold text-xl mb-2">Restaurants</div>
+                    <a href="./Visiteur/restaurant.php" class="inline-block bg-yellow-500 text-white py-2 px-4 rounded hover:bg-yellow-700">Voir la liste</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tailwind CSS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
