@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Redirection vers la page d'accueil avec un message dans l'URL
     // header("Location: http://localhost/projetXML/Admin/tableau_film.php");
-    header("Location: http://localhost/CrudFilmRestau/Admin/tableau_film.php");
+    header("Location: http://localhost/updateXML/projetXml/Admin/tableau_film.php");
     exit();
 }
 ?>
