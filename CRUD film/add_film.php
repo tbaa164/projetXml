@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     saveXMLData($xml);
 
     // Redirection vers la page d'accueil avec un message dans l'URL
-    header("Location: http://localhost/projetXML/eeee.php");
+    header("Location: http://localhost/projetXML/Admin/tableau_film.php");
     exit();
 }
 ?>
