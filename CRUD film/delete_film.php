@@ -1,5 +1,5 @@
 <?php
-include 'config/xml_config.php';
+include '../config/xml_film_config.php';
 
 // Supprimer un film spécifique par son ID du fichier XML
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

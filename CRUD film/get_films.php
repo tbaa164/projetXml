@@ -1,5 +1,5 @@
 <?php
-include 'config/xml_config.php';
+include '../config/xml_film_config.php';
 
 // Charger tous les films à partir du fichier XML
 $films = simplexml_load_file($filmsPath);
@@ -14,7 +14,11 @@ foreach ($films->film as $film) {
         'Genre' => (string)$film->genre,
         'Realisateur' => (string)$film->realisateur,
         'Annee' => (int)$film->annee,
-        'Synopsis' => (string)$film->synopsis
+        'Synopsis' => (string)$film->synopsis,
+        'Acteurs' => (string)$film->acteurs,
+        'Presse' => (string)$film->presse,
+        'Spectateurs' => (string)$film->spectateurs,
+        'Horaires' => (string)$film->horaires
     ];
 }
 

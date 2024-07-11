@@ -1,12 +1,12 @@
 <?php
-include 'config/xml_config.php';
+include '../config/xml_film_config.php';
 
 // Vérifiez si l'ID est passé en paramètre et est numérique
 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id']) && is_numeric($_GET['id'])) {
     $id = $_GET['id'];
 
     // Charger le fichier XML
-    $films = simplexml_load_file('films.xml'); // Charger le fichier XML
+    $films = simplexml_load_file('../xml/films.xml');
 
     // Recherche du film par son ID
     $filmFound = null;
@@ -27,7 +27,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id']) && is_numeric($_GE
             'Genre' => (string)$filmFound->Genre,
             'Realisateur' => (string)$filmFound->Realisateur,
             'Annee' => (int)$filmFound->Annee,
-            'Synopsis' => (string)$filmFound->Synopsis
+            'Synopsis' => (string)$filmFound->Synopsis,
+            'Acteurs' => (string)$filmFound->Acteurs,
+            'Presse' => (string)$filmFound->Presse,
+            'Spectateurs' => (string)$filmFound->Spectateurs,
+            'Horaires' => (string)$filmFound->Horaires
         ];
 
         // Renvoyer les données du film en JSON
