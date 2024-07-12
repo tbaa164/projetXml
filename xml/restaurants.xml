@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE restaurants SYSTEM "restaurants.dtd">
 <restaurants>
-  <restaurant>
-    <nom>Le Gourmet</nom>
+  <restaurant id="669014b30f28e1">
+    <nom>Le Gourmet 1</nom>
     <adresse>123 Rue de Paris, 75000 Paris, France</adresse>
     <restaurateur>Jean Dupont</restaurateur>
-    <description>
-      Un restaurant gastronomique situé au cœur de Paris. Nous proposons une cuisine raffinée et 
-      élégante avec des produits frais et de saison.
+    <description>&#13;
+      Un restaurant gastronomique situé au cœur de Paris. Nous proposons une cuisine raffinée et &#13;
+      élégante avec des produits frais et de saison.&#13;
     </description>
     <images>
       <image>https://i.pinimg.com/736x/e5/48/7a/e5487a70a493246eb388dc5485d8dade.jpg</image>
@@ -176,4 +176,4 @@
       </menu>
     </menus>
   </restaurant>
-<restaurant id="669014b30f28e"><nom>Niane</nom><adresse>dnkcd</adresse><restaurateur>wk:dcn</restaurateur><description>wk:wnd1124111</description></restaurant></restaurants>
+<restaurant id="669014b30f28e"><nom>Niane</nom><adresse>dnkcd</adresse><restaurateur>wk:dcn</restaurateur><description>wk:wnd11241</description></restaurant></restaurants>

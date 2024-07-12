@@ -1,53 +1,56 @@
 <?php
+// Inclure la configuration XML et les fonctions nécessaires
 include '../config/xml_film_config.php';
 
-// Vérifiez si l'ID est passé en paramètre et est numérique
-if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id']) && is_numeric($_GET['id'])) {
-    $id = $_GET['id'];
-
-    // Charger le fichier XML
-    $films = simplexml_load_file('../xml/films.xml');
-
-    // Recherche du film par son ID
-    $filmFound = null;
-    foreach ($films->Film as $film) {
-        if ((int)$film->id === (int)$id) {
-            $filmFound = $film;
-            break;
-        }
-    }
-
-    // Vérifier si le film a été trouvé
-    if ($filmFound) {
-        // Construire un tableau associatif pour renvoyer en JSON
-        $filmData = [
-            'id' => (int)$filmFound->id,
-            'Titre' => (string)$filmFound->Titre,
-            'Duree' => (string)$filmFound->Duree,
-            'Genre' => (string)$filmFound->Genre,
-            'Realisateur' => (string)$filmFound->Realisateur,
-            'Annee' => (int)$filmFound->Annee,
-            'Synopsis' => (string)$filmFound->Synopsis,
-            'Acteurs' => (string)$filmFound->Acteurs,
-            'Presse' => (string)$filmFound->Presse,
-            'Spectateurs' => (string)$filmFound->Spectateurs,
-            'Horaires' => (string)$filmFound->Horaires
-        ];
-
-        // Renvoyer les données du film en JSON
-        header('Content-Type: application/json');
-        echo json_encode($filmData);
-        exit();
-    } else {
-        // Si le film n'est pas trouvé, renvoyer une erreur
-        http_response_code(404);
-        echo json_encode(['message' => 'Film non trouvé.']);
-        exit();
-    }
-} else {
-    // Si l'ID n'est pas passé en paramètre ou n'est pas numérique
+// Vérifier si l'ID du film est fourni dans la requête GET
+if (!isset($_GET['id']) || empty($_GET['id'])) {
     http_response_code(400);
     echo json_encode(['message' => 'Paramètre ID manquant ou non valide.']);
     exit();
 }
+
+$id = $_GET['id'];
+
+// Charger le fichier XML des films
+$films = simplexml_load_file('../xml/films.xml');
+
+// Vérifier si le chargement du fichier XML a échoué
+if ($films === false) {
+    http_response_code(500);
+    echo json_encode(['message' => 'Erreur lors du chargement du fichier XML des films.']);
+    exit();
+}
+
+// Rechercher le film par son ID (en utilisant un XPath pour un meilleur contrôle)
+$filmFound = $films->xpath("/Films/Film[@id='$id']");
+
+// Vérifier si le film a été trouvé
+if (empty($filmFound)) {
+    http_response_code(404);
+    echo json_encode(['message' => 'Film non trouvé.']);
+    exit();
+}
+
+// Récupérer le premier élément trouvé (normalement unique)
+$film = $filmFound[0];
+
+// Préparer les données du film à retourner
+$filmData = [
+    'id' => (string)$film['id'],
+    'Titre' => (string)$film->Titre,
+    'Duree' => (string)$film->Duree,
+    'Genre' => (string)$film->Genre,
+    'Realisateur' => (string)$film->Realisateur,
+    'LangueDiffusion' => (string)$film->LangueDiffusion,
+    'Annee' => (int)$film->Annee,
+    'Synopsis' => (string)$film->Synopsis,
+    'acteurs' => (string)$film->acteurs,
+    'presse' => (string)$film->Presse,
+    'spectateurs' => (string)$film->Spectateurs,
+    'horaires' => (string)$film->Horaires
+];
+
+// Retourner les données du film au format JSON
+header('Content-Type: application/json');
+echo json_encode($filmData);
 ?>

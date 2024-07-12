@@ -180,6 +180,7 @@
                         <p>Êtes-vous sûr de vouloir supprimer ce restaurant?</p>
                         <div id="deleteRestaurantDetails">
                             <!-- Les détails du restaurant seront affichés ici -->
+                             
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -190,6 +191,27 @@
             </div>
         </div>
     </div>
+
+    <!-- Modale de visualisation de restaurant -->
+<div id="viewRestaurantModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Détails du Restaurant</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="viewRestaurantDetails">
+                    <!-- Les détails du restaurant seront affichés ici -->
+                           
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
 
     <!-- Message -->
     <div id="message"></div>
@@ -230,6 +252,48 @@
                     alert('Erreur lors de la récupération des données du restaurant.');
                 });
             }
+
+            function viewRestaurant(id) {
+            fetch(`../CRUD restaurant/get_restaurant.php?id=${id}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erreur HTTP ' + response.status);
+                }
+                return response.json();
+            })
+            .then(restaurant => {
+                if (restaurant && restaurant.id) {
+                    // Afficher les détails du restaurant dans la modale de visualisation
+                    $('#viewRestaurantDetails').html(`
+                        <p><strong>Nom:</strong> ${restaurant.Nom}</p>
+                        <p><strong>Adresse:</strong> ${restaurant.Adresse}</p>
+                        <p><strong>Restaurateur:</strong> ${restaurant.Restaurateur}</p>
+                        <p><strong>Description:</strong> ${restaurant.Description}</p>
+                        <p><strong>Plats:</strong> Steak frites, Salade César</p>
+                        <p> Steak frites, 25.00 EUR </p>
+                        <p> Salade César, 70.00 EUR </p>
+                        <p> Poulets brises, 100.00 EUR </p>
+                        <p><strong>Menus:</strong> </p>
+                        <p> Menu du jour : Menu végétarien </p>
+                         <p> Dessert : Glace aux chocolats </p>
+
+
+                    `);
+
+
+                    // Afficher la modale de visualisation de restaurant
+                    $('#viewRestaurantModal').modal('show');
+                } else {
+                    console.error('Erreur: les données du restaurant sont manquantes.');
+                    alert('Erreur: les données du restaurant sont manquantes.');
+                }
+            })
+            .catch(error => {
+                console.error('Erreur:', error);
+                alert('Erreur lors de la récupération des données du restaurant.');
+            });
+        }
+            
 
             // Fonction pour récupérer les détails du restaurant avant de le supprimer
             function confirmDeleteRestaurant(id) {
@@ -304,6 +368,11 @@
             $(document).on('click', '.delete-restaurant-btn', function() {
                 const restaurantId = $(this).data('id');
                 confirmDeleteRestaurant(restaurantId);
+            });
+
+            $(document).on('click', '.view-restaurant-btn', function() {
+                const restaurantId = $(this).data('id');
+                viewRestaurant(restaurantId);
             });
         });
     </script>

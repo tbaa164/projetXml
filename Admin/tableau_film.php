@@ -1,60 +1,3 @@
-<?php
-    include '../config/xml_film_config.php';
-
-    // Gestion de la modification d'un film
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET['id'])) {
-        $id = $_GET['id'];
-
-        // Vérifiez si l'ID est numérique et valide
-        if (!is_numeric($id)) {
-            die('Erreur : ID de film non valide.');
-        }
-
-        // Récupération des données du formulaire
-        $titre = $_POST['titre'];
-        $duree = $_POST['duree'];
-        $genre = $_POST['genre'];
-        $realisateur = $_POST['realisateur'];
-        $annee = $_POST['annee'];
-        $synopsis = $_POST['synopsis'];
-
-        // Validation des données (assurez-vous qu'aucun champ n'est vide par exemple)
-        if (empty($titre) || empty($duree) || empty($genre) || empty($realisateur) || empty($annee) || empty($synopsis)) {
-            die('Erreur : Les données du film sont incomplètes.');
-        }
-
-        // Traitement de la modification du film dans le fichier XML (exemple)
-        $films = simplexml_load_file('../xml/films.xml'); // Charger le fichier XML
-
-        // Recherche du film par son ID pour la modification
-        $filmFound = false;
-        foreach ($films->Film as $film) {
-            if ($film->id == $id) {
-                $film->Titre = $titre;
-                $film->Duree = $duree;
-                $film->Genre = $genre;
-                $film->Realisateur = $realisateur;
-                $film->Annee = $annee;
-                $film->Synopsis = $synopsis;
-                $filmFound = true;
-                break;
-            }
-        }
-
-        if (!$filmFound) {
-            die('Erreur : Film non trouvé pour la modification.');
-        }
-
-        // Sauvegarde des modifications dans le fichier XML
-        $films->asXML('../xml/films.xml');
-
-        // Réponse de succès
-        echo json_encode(array('message' => 'Film modifié avec succès.'));
-        exit();
-    }
-    ?>
-
-
     <!DOCTYPE html>
     <html lang="fr">
     <head>
@@ -188,6 +131,92 @@
     </div>
 </div>
 
+<!-- Modale de modification de film -->
+<div id="editFilmModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form id="editFilmForm" method="POST" action="../CRUD film/add_film.php">
+                <div class="modal-header">
+                    <h4 class="modal-title">Modifier un Film</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="edit_titre">Titre:</label>
+                        <input type="text" id="edit_titre" name="titre" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_duree">Durée:</label>
+                        <input type="text" id="edit_duree" name="duree" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_genre">Genre:</label>
+                        <input type="text" id="edit_genre" name="genre" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_realisateur">Réalisateur:</label>
+                        <input type="text" id="edit_realisateur" name="realisateur" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_langue_diffusion">Langue de Diffusion:</label>
+                        <input type="text" id="edit_langue_diffusion" name="langue_diffusion" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_annee">Année:</label>
+                        <input type="text" id="edit_annee" name="annee" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_synopsis">Synopsis:</label>
+                        <textarea id="edit_synopsis" name="synopsis" class="form-control" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_acteurs">Acteurs (séparés par des virgules):</label>
+                        <input type="text" id="edit_acteurs" name="acteurs" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_presse">Notes Presse:</label>
+                        <input type="text" id="edit_presse" name="presse" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_spectateurs">Notes Spectateurs:</label>
+                        <input type="text" id="edit_spectateurs" name="spectateurs" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_horaires">Horaires (jour et heures séparées par des virgules, ex: Lun:10:00,14:00,16:00):</label>
+                        <input type="text" id="edit_horaires" name="horaires" class="form-control" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                    <button type="submit" class="btn btn-success">Modifier</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+ <!-- Les détails du film seront affichés ici -->
+<div id="viewFilmModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Détails du film</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="viewFilmDetails">
+                    <!-- Les détails du film seront affichés ici -->
+                           
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
         <!-- Message -->
         <div id="message"></div>
@@ -214,6 +243,7 @@
                                 const realisateur = film.getElementsByTagName('Realisateur')[0].textContent;
                                 const annee = film.getElementsByTagName('Annee')[0].textContent;
                                 const synopsis = film.getElementsByTagName('Synopsis')[0].textContent;
+                                
 
                                 filmsData.push({
                                     Titre: titre,
@@ -240,8 +270,10 @@
                                     <td>${film.Annee}</td>
                                     <td>${film.Synopsis}</td>
                                     <td>
-                                        <button class="btn btn-sm" data-id="${film.id}"><img src="../assets/eye-alt-svgrepo-com.png" alt="" width="20"></button>
-                                        <button class="btn btn-sm edit-film-btn" data-id="${film.id}"><img src="../assets/edit-4-svgrepo-com.png" alt="" width="20"></button>
+                                        <button class="btn btn-sm view-film-btn" data-id="669193c48026b"><img src="../assets/eye-alt-svgrepo-com.png" alt="" width="20"></button>
+                                      <button class="btn btn-sm edit-film-btn" data-id="669193c48026b">
+                                     <img src="../assets/edit-4-svgrepo-com.png" alt="" width="20">
+                                    </button>
                                         <button class="btn btn-sm" onclick="deleteFilm(${film.id})"><img src="../assets/delete-svgrepo-com.png" alt="" width="20"></button>
 
                                     </td>`;
@@ -252,6 +284,103 @@
                 }
 
                 loadFilmsFromXML();
+
+                //pour modifier
+                function viewFilm(id) {
+                    fetch(`../CRUD film/get_film.php?id=${id}`)
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Erreur HTTP ' + response.status);
+                            }
+                            return response.json();
+                        })
+                        .then(film => {
+                            if (film && film.id) {
+                                // Afficher les détails du film dans la modale de visualisation
+                                $('#viewFilmDetails').html(`
+                                    <p><strong>Titre:</strong> ${film.Titre}</p>
+                                    <p><strong>Durée:</strong> ${film.Duree}</p>
+                                    <p><strong>Genre:</strong> ${film.Genre}</p>
+                                    <p><strong>Réalisateur:</strong> ${film.Realisateur}</p>
+                                    <p><strong>Langue de diffusion:</strong> ${film.LangueDiffusion}</p>
+                                    <p><strong>Année:</strong> ${film.Annee}</p>
+                                    <p><strong>Synopsis:</strong> ${film.Synopsis}</p>
+                                    <p><strong>Acteurs:</strong> Vin Diesel, Paul Walker</p>
+                                    <p><strong>Presse:</strong> Arona </p>
+                                    <p><strong>Spectateurs:</strong> Marie,Djiby,Arona,Mortalla,Saliou,Fedior</p>
+                                    <p><strong>Horaires:</strong> Lun:10:00,14:00,16:00</p>
+                                `);
+
+                                // Afficher la modale de visualisation du film
+                                $('#viewFilmModal').modal('show');
+                            } else {
+                                console.error('Erreur: les données du film sont manquantes.');
+                                alert('Erreur: les données du film sont manquantes.');
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Erreur:', error);
+                            alert('Erreur lors de la récupération des données du film.');
+                        });
+                }
+
+              // Fonction pour éditer un film par son ID
+                function editFilm(id) {
+                    fetch(`../CRUD film/get_film.php?id=${id}`)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Erreur HTTP ' + response.status);
+                        }
+                        return response.json();
+                    })
+                    .then(film => {
+                        if (film && film.id) {
+                            // Remplir les champs du formulaire avec les données du film
+                            document.getElementById('edit_titre').value = film.Titre;
+                            document.getElementById('edit_duree').value = film.Duree;
+                            document.getElementById('edit_genre').value = film.Genre;
+                            document.getElementById('edit_realisateur').value = film.Realisateur;
+                            document.getElementById('edit_langue_diffusion').value = film.LangueDiffusion;
+                            document.getElementById('edit_annee').value = film.Annee;
+                            document.getElementById('edit_synopsis').value = film.Synopsis;
+                            document.getElementById('edit_acteurs').value = film.acteurs;
+                            document.getElementById('edit_presse').value = film.presse;
+                            document.getElementById('edit_spectateurs').value = film.spectateurs;
+                            document.getElementById('edit_horaires').value = film.horaires;
+
+                            // Mettre à jour l'action du formulaire avec l'ID du film pour l'édition
+                            const form = document.getElementById('editFilmForm');
+                            form.setAttribute('action', `../CRUD film/edit_film.php?id=${id}`);
+                            form.querySelector('button[type="submit"]').innerText = 'Modifier';
+
+                            // Afficher la modale de modification
+                            $('#editFilmModal').modal('show');
+                        } else {
+                            console.error('Erreur: les données du film sont manquantes.');
+                            alert('Erreur: les données du film sont manquantes.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Erreur:', error);
+                        alert('Erreur lors de la récupération des données du film.');
+                    });
+                }
+
+                // Écouter le clic sur le bouton d'édition d'un film
+                $(document).on('click', '.edit-film-btn', function() {
+    const idfilm = $(this).data('id');
+    console.log(idfilm); // Vérifiez si idfilm est correctement défini
+    editFilm(idfilm);
+});
+
+$(document).on('click', '.view-film-btn', function() {
+    const idfilm = $(this).data('id');
+    console.log(idfilm); // Vérifiez si idfilm est correctement défini
+    viewFilm(idfilm);
+});
+
+
+
 
                 // Fonction pour supprimer un film
                 function deleteFilm(id) {
@@ -276,47 +405,19 @@
                 }
 
                 // Fonction pour pré-remplir le formulaire de modification de film
-                function editFilm(id) {
-        fetch(`get_film.php?id=${id}`)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Erreur HTTP ' + response.status);
-            }
-            return response.json();
-        })
-        .then(film => {
-            if (film && film.id) {
-                document.getElementById('titre').value = film.Titre;
-                document.getElementById('duree').value = film.Duree;
-                document.getElementById('genre').value = film.Genre;
-                document.getElementById('realisateur').value = film.Realisateur;
-                document.getElementById('annee').value = film.Annee;
-                document.getElementById('synopsis').value = film.Synopsis;
+              
 
-                const form = document.getElementById('filmForm');
-                form.setAttribute('action', `edit_film.php?id=${id}`);
-                form.querySelector('button[type="submit"]').innerText = 'Modifier';
-            } else {
-                console.error('Erreur: les données du film sont manquantes.');
-                alert('Erreur: les données du film sont manquantes.');
-            }
-        })
-        .catch(error => {
-            console.error('Erreur:', error);
-            alert('Erreur lors de la récupération des données du film.');
-        });
-    }
-
-
-
-
-                // Associer l'événement de clic aux boutons de modification
+               // Associer l'événement de clic aux boutons de modification
                 document.addEventListener('click', function(event) {
                     if (event.target.classList.contains('edit-film-btn')) {
                         const filmId = event.target.getAttribute('data-id');
                         editFilm(filmId);
                     }
                 });
+                // $(document).on('click', '.edit-film-btn', function() {
+                // const idfilm = $(this).data('id');
+                // editFilm(idfilm);
+                // });
 
                 // Réinitialiser le formulaire d'ajout de film lorsque la modale est fermée
                 $('#addFilmModal').on('hidden.bs.modal', function() {
