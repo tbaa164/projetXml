@@ -1,7 +1,7 @@
 <?php
 // Fonction pour charger les données XML depuis le fichier
 function loadXMLData() {
-    $xmlFile = 'films.xml';
+    $xmlFile = '../xml/films.xml';
     if (file_exists($xmlFile)) {
         return simplexml_load_file($xmlFile);
     } else {
@@ -11,7 +11,7 @@ function loadXMLData() {
 
 // Fonction pour sauvegarder les données XML dans le fichier
 function saveXMLData($xml) {
-    $xmlFile = 'films.xml';
+    $xmlFile = '../xml/films.xml';
     $xml->asXML($xmlFile);
 }
 

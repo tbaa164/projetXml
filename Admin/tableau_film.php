@@ -1,5 +1,5 @@
-    <?php
-    include 'config/xml_config.php';
+<?php
+    include '../config/xml_film_config.php';
 
     // Gestion de la modification d'un film
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET['id'])) {
@@ -24,7 +24,7 @@
         }
 
         // Traitement de la modification du film dans le fichier XML (exemple)
-        $films = simplexml_load_file('films.xml'); // Charger le fichier XML
+        $films = simplexml_load_file('../xml/films.xml'); // Charger le fichier XML
 
         // Recherche du film par son ID pour la modification
         $filmFound = false;
@@ -46,7 +46,7 @@
         }
 
         // Sauvegarde des modifications dans le fichier XML
-        $films->asXML('films.xml');
+        $films->asXML('../xml/films.xml');
 
         // Réponse de succès
         echo json_encode(array('message' => 'Film modifié avec succès.'));
@@ -62,7 +62,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Gestion des Films</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../style.css">
     </head>
     <body>
         
@@ -75,7 +75,7 @@
                                 <h2>Gestion des <b>Films</b></h2>
                             </div>
                             <div class="col-sm-6">
-                                <a href="#addFilmModal" class="btn btn-success" data-toggle="modal"><img src=".\assets\plus-svgrepo-com.png" alt="" width="10"><span>Ajouter Film</span></a>
+                                <a href="#addFilmModal" class="btn btn-success" data-toggle="modal"><img src="../assets/plus-svgrepo-com.png" alt="" width="10"><span>Ajouter Film</span></a>
                             </div>
                         </div>
                     </div>
@@ -110,49 +110,70 @@
             </div>
         </div>
 
-        <!-- Modale d'ajout de film -->
-        <div id="addFilmModal" class="modal fade">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <form id="filmForm" method="POST" action="add_film.php">
-                        <div class="modal-header">
-                            <h4 class="modal-title">Ajouter un Film</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label for="titre">Titre:</label>
-                                <input type="text" id="titre" name="titre" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="duree">Durée:</label>
-                                <input type="text" id="duree" name="duree" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="genre">Genre:</label>
-                                <input type="text" id="genre" name="genre" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="realisateur">Réalisateur:</label>
-                                <input type="text" id="realisateur" name="realisateur" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="annee">Année:</label>
-                                <input type="text" id="annee" name="annee" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="synopsis">Synopsis:</label>
-                                <textarea id="synopsis" name="synopsis" class="form-control" rows="4" required></textarea>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-                            <button type="submit" class="btn btn-success">Ajouter</button>
-                        </div>
-                    </form>
+       <!-- Modale d'ajout de film -->
+<div id="addFilmModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form id="filmForm" method="POST" action="../CRUD film/add_film.php">
+                <div class="modal-header">
+                    <h4 class="modal-title">Ajouter un Film</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
-            </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="titre">Titre:</label>
+                        <input type="text" id="titre" name="titre" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="duree">Durée:</label>
+                        <input type="text" id="duree" name="duree" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="genre">Genre:</label>
+                        <input type="text" id="genre" name="genre" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="realisateur">Réalisateur:</label>
+                        <input type="text" id="realisateur" name="realisateur" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="langue_diffusion">Langue de Diffusion:</label>
+                        <input type="text" id="langue_diffusion" name="langue_diffusion" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="annee">Année:</label>
+                        <input type="text" id="annee" name="annee" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="synopsis">Synopsis:</label>
+                        <textarea id="synopsis" name="synopsis" class="form-control" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="acteurs">Acteurs (séparés par des virgules):</label>
+                        <input type="text" id="acteurs" name="acteurs" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="presse">Notes Presse:</label>
+                        <input type="text" id="presse" name="presse" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="spectateurs">Notes Spectateurs:</label>
+                        <input type="text" id="spectateurs" name="spectateurs" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="horaires">Horaires (jour et heures séparées par des virgules, ex: Lun:10:00,14:00,16:00):</label>
+                        <input type="text" id="horaires" name="horaires" class="form-control" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                    <button type="submit" class="btn btn-success">Ajouter</button>
+                </div>
+            </form>
         </div>
+    </div>
+</div>
+
 
         <!-- Message -->
         <div id="message"></div>
@@ -164,7 +185,7 @@
             document.addEventListener('DOMContentLoaded', function() {
                 // Fonction pour charger les films depuis le fichier XML
                 function loadFilmsFromXML() {
-                    fetch('films.xml') // Chemin vers votre fichier XML
+                    fetch('../xml/films.xml') // Chemin vers votre fichier XML
                         .then(response => response.text())
                         .then(xmlString => {
                             const parser = new DOMParser();
@@ -205,9 +226,9 @@
                                     <td>${film.Annee}</td>
                                     <td>${film.Synopsis}</td>
                                     <td>
-                                        <button class="btn btn-sm" data-id="${film.id}"><img src=".\\assets\\eye-alt-svgrepo-com.png" alt="" width="20"></button>
-                                        <button class="btn btn-sm edit-film-btn" data-id="${film.id}"><img src=".\\assets\\edit-4-svgrepo-com.png" alt="" width="20"></button>
-                                        <button class="btn btn-sm" onclick="deleteFilm(${film.id})"><img src=".\\assets\\delete-svgrepo-com.png" alt="" width="20"></button>
+                                        <button class="btn btn-sm" data-id="${film.id}"><img src="../assets/eye-alt-svgrepo-com.png" alt="" width="20"></button>
+                                        <button class="btn btn-sm edit-film-btn" data-id="${film.id}"><img src="../assets/edit-4-svgrepo-com.png" alt="" width="20"></button>
+                                        <button class="btn btn-sm" onclick="deleteFilm(${film.id})"><img src="../assets/delete-svgrepo-com.png" alt="" width="20"></button>
 
                                     </td>`;
                                 filmsTable.appendChild(row);
@@ -287,7 +308,7 @@
                 $('#addFilmModal').on('hidden.bs.modal', function() {
                     document.getElementById('filmForm').reset();
                     const form = document.getElementById('filmForm');
-                    form.setAttribute('action', 'add_film.php');
+                    form.setAttribute('action', '../CRUD film/add_film.php');
                     form.querySelector('button[type="submit"]').innerText = 'Ajouter';
                 });
             });
