@@ -65,7 +65,42 @@ $xml = simplexml_load_file('../xml/films.xml') or die('Erreur de chargement du f
                 </div>
             </div>
             <?php endforeach; ?>
+            <button onclick="closeModal()" class="bg-red-500 text-white py-2 px-4 mt-4 rounded hover:bg-red-700">Fermer</button>
         </div>
     </div>
+    <!-- JavaScript -->
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const tabs = document.querySelectorAll('[data-tab]');
+            const tabContents = document.querySelectorAll('.tab-content > div');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    const target = tab.getAttribute('data-tab');
+
+                    tabs.forEach(t => t.classList.remove('border-blue-500', 'text-blue-500'));
+                    tab.classList.add('border-blue-500', 'text-blue-500');
+
+                    tabContents.forEach(content => {
+                        if (content.getAttribute('id') === target) {
+                            content.classList.add('active');
+                        } else {
+                            content.classList.remove('active');
+                        }
+                    });
+                });
+            });
+        });
+
+        function openModal() {
+            document.getElementById('restaurant-modal').classList.add('modal-active');
+        }
+
+        function closeModal() {
+            document.getElementById('restaurant-modal').classList.remove('modal-active');
+        }
+    </script>
 </body>
 </html>

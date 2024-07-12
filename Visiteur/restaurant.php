@@ -52,7 +52,18 @@ $xml = simplexml_load_file('../xml/restaurants.xml') or die('Erreur de chargemen
                 </div>
             </div>
             <?php endforeach; ?>
+            <button onclick="closeModal()" class="bg-red-500 text-white mt-2 py-2 px-4 rounded hover:bg-red-700">Fermer</button>
         </div>
     </div>
+    <!-- JavaScript -->
+    <script>
+        function openModal() {
+            document.getElementById('restaurant-modal').classList.add('modal-active');
+        }
+
+        function closeModal() {
+            document.getElementById('restaurant-modal').classList.remove('modal-active');
+        }
+    </script>
 </body>
 </html>
