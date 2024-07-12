@@ -65,7 +65,21 @@
         <link rel="stylesheet" href="../style.css">
     </head>
     <body>
-        
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand bg-dark text-white p-2" href=".\tableau_restaurant.php"> <img src=".\..\assets\left-arrow-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Note Icon" width="25px"> Gestion des Restaurants</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link bg-warning font-weight-bold text-white fs-1" href="./../index.html">Visiteur</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>        
         <div class="container-xl">
             <div class="table-responsive">
                 <div class="table-wrapper">
@@ -98,9 +112,9 @@
                     <div class="clearfix">
                         <ul class="pagination">
                             <li class="page-item disabled"><a href="#">Précédent</a></li>
-                            <li class="page-item"><a href="#" class="page-link">1</a></li>
+                            <li class="page-item active"><a href="#" class="page-link">1</a></li>
                             <li class="page-item"><a href="#" class="page-link">2</a></li>
-                            <li class="page-item active"><a href="#" class="page-link">3</a></li>
+                            <li class="page-item"><a href="#" class="page-link">3</a></li>
                             <li class="page-item"><a href="#" class="page-link">4</a></li>
                             <li class="page-item"><a href="#" class="page-link">5</a></li>
                             <li class="page-item"><a href="#">Suivant</a></li>

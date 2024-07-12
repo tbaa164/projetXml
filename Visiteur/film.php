@@ -57,33 +57,7 @@
         <div class="welcome-text mb-8">
             Cinéma !
         </div>
-        <div class="grid grid-cols-3 space-x-4">
-        <div class="card-custom overflow-hidden shadow-lg bg-white mb-8">
-                <img src="https://i.pinimg.com/564x/68/ea/02/68ea02c1baf2a8477216cf401bb378ae.jpg" class="w-full h-1/2 object-cover" alt="Cinema Image">
-                <div class="px-6 py-4 text-center">
-                <div class="font-bold text-xl mb-2">Les Brigades du Tigre</div>
-                <div class="font-bold text-sm mb-2 italic">Policier</div>
-                <div class="mb-4">
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\alarm-clock-alt-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>2h 5min</p>
-                        </div>
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\actor-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>Jérôme Cornuau</p>
-                        </div>
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\language-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>VF (en Français)</p>
-                        </div>
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\person-team-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>C. Cornillac, D. Kruger, E. Baer</p>
-                        </div>
-                    </div>
-                    <button onclick="openModal()" class="inline-block bg-green-500 text-white py-2 px-4 rounded hover:bg-green-700">Voir plus</button>
-                </div>
-            </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 space-x-4">
             <div class="card-custom overflow-hidden shadow-lg bg-white mb-8">
                 <img src="https://i.pinimg.com/564x/68/ea/02/68ea02c1baf2a8477216cf401bb378ae.jpg" class="w-full h-1/2 object-cover" alt="Cinema Image">
                 <div class="px-6 py-4 text-center">
@@ -111,18 +85,18 @@
                 </div>
             </div>
             <div class="card-custom overflow-hidden shadow-lg bg-white mb-8">
-                <img src="https://i.pinimg.com/564x/68/ea/02/68ea02c1baf2a8477216cf401bb378ae.jpg" class="w-full h-1/2 object-cover" alt="Cinema Image">
+                <img src="https://i.pinimg.com/564x/95/5e/4d/955e4d082a09f5050740fc97e3d938dc.jpg" class="w-full h-1/2 object-cover" alt="Cinema Image">
                 <div class="px-6 py-4 text-center">
-                <div class="font-bold text-xl mb-2">Les Brigades du Tigre</div>
-                <div class="font-bold text-sm mb-2 italic">Policier</div>
+                <div class="font-bold text-xl mb-2">Le Fabuleux Destin d'Amélie Poulain</div>
+                <div class="font-bold text-sm mb-2 italic">Comédie</div>
                 <div class="mb-4">
                         <div class="flex items-start justify-start mb-2">
                             <img src=".\..\assets\alarm-clock-alt-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>2h 5min</p>
+                            <p>2h 2min</p>
                         </div>
                         <div class="flex items-start justify-start mb-2">
                             <img src=".\..\assets\actor-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>Jérôme Cornuau</p>
+                            <p>Jean-Pierre Jeunet</p>
                         </div>
                         <div class="flex items-start justify-start mb-2">
                             <img src=".\..\assets\language-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
@@ -130,25 +104,25 @@
                         </div>
                         <div class="flex items-start justify-start mb-2">
                             <img src=".\..\assets\person-team-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>C. Cornillac, D. Kruger, E. Baer</p>
+                            <p>Audrey Tautou, Mathieu Kassovitz, Rufus</p>
                         </div>
                     </div>
                     <button onclick="openModal()" class="inline-block bg-green-500 text-white py-2 px-4 rounded hover:bg-green-700">Voir plus</button>
                 </div>
             </div>
             <div class="card-custom overflow-hidden shadow-lg bg-white mb-8">
-                <img src="https://i.pinimg.com/564x/68/ea/02/68ea02c1baf2a8477216cf401bb378ae.jpg" class="w-full h-1/2 object-cover" alt="Cinema Image">
+                <img src="https://i.pinimg.com/564x/22/fd/22/22fd223f016b3d61d53771862ebb4968.jpg" class="w-full h-1/2 object-cover" alt="Cinema Image">
                 <div class="px-6 py-4 text-center">
-                <div class="font-bold text-xl mb-2">Les Brigades du Tigre</div>
-                <div class="font-bold text-sm mb-2 italic">Policier</div>
+                <div class="font-bold text-xl mb-2">Intouchables</div>
+                <div class="font-bold text-sm mb-2 italic">Drame</div>
                 <div class="mb-4">
                         <div class="flex items-start justify-start mb-2">
                             <img src=".\..\assets\alarm-clock-alt-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>2h 5min</p>
+                            <p>1h 52min</p>
                         </div>
                         <div class="flex items-start justify-start mb-2">
                             <img src=".\..\assets\actor-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>Jérôme Cornuau</p>
+                            <p>Olivier Nakache et Eric Toledano</p>
                         </div>
                         <div class="flex items-start justify-start mb-2">
                             <img src=".\..\assets\language-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
@@ -156,293 +130,7 @@
                         </div>
                         <div class="flex items-start justify-start mb-2">
                             <img src=".\..\assets\person-team-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>C. Cornillac, D. Kruger, E. Baer</p>
-                        </div>
-                    </div>
-                    <button onclick="openModal()" class="inline-block bg-green-500 text-white py-2 px-4 rounded hover:bg-green-700">Voir plus</button>
-                </div>
-            </div>
-            <div class="card-custom overflow-hidden shadow-lg bg-white mb-8">
-                <img src="https://i.pinimg.com/564x/68/ea/02/68ea02c1baf2a8477216cf401bb378ae.jpg" class="w-full h-1/2 object-cover" alt="Cinema Image">
-                <div class="px-6 py-4 text-center">
-                <div class="font-bold text-xl mb-2">Les Brigades du Tigre</div>
-                <div class="font-bold text-sm mb-2 italic">Policier</div>
-                <div class="mb-4">
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\alarm-clock-alt-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>2h 5min</p>
-                        </div>
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\actor-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>Jérôme Cornuau</p>
-                        </div>
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\language-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>VF (en Français)</p>
-                        </div>
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\person-team-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>C. Cornillac, D. Kruger, E. Baer</p>
-                        </div>
-                    </div>
-                    <button onclick="openModal()" class="inline-block bg-green-500 text-white py-2 px-4 rounded hover:bg-green-700">Voir plus</button>
-                </div>
-            </div>
-            <div class="card-custom overflow-hidden shadow-lg bg-white mb-8">
-                <img src="https://i.pinimg.com/564x/68/ea/02/68ea02c1baf2a8477216cf401bb378ae.jpg" class="w-full h-1/2 object-cover" alt="Cinema Image">
-                <div class="px-6 py-4 text-center">
-                <div class="font-bold text-xl mb-2">Les Brigades du Tigre</div>
-                <div class="font-bold text-sm mb-2 italic">Policier</div>
-                <div class="mb-4">
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\alarm-clock-alt-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>2h 5min</p>
-                        </div>
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\actor-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>Jérôme Cornuau</p>
-                        </div>
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\language-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>VF (en Français)</p>
-                        </div>
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\person-team-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>C. Cornillac, D. Kruger, E. Baer</p>
-                        </div>
-                    </div>
-                    <button onclick="openModal()" class="inline-block bg-green-500 text-white py-2 px-4 rounded hover:bg-green-700">Voir plus</button>
-                </div>
-            </div>
-            <div class="card-custom overflow-hidden shadow-lg bg-white mb-8">
-                <img src="https://i.pinimg.com/564x/68/ea/02/68ea02c1baf2a8477216cf401bb378ae.jpg" class="w-full h-1/2 object-cover" alt="Cinema Image">
-                <div class="px-6 py-4 text-center">
-                <div class="font-bold text-xl mb-2">Les Brigades du Tigre</div>
-                <div class="font-bold text-sm mb-2 italic">Policier</div>
-                <div class="mb-4">
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\alarm-clock-alt-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>2h 5min</p>
-                        </div>
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\actor-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>Jérôme Cornuau</p>
-                        </div>
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\language-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>VF (en Français)</p>
-                        </div>
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\person-team-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>C. Cornillac, D. Kruger, E. Baer</p>
-                        </div>
-                    </div>
-                    <button onclick="openModal()" class="inline-block bg-green-500 text-white py-2 px-4 rounded hover:bg-green-700">Voir plus</button>
-                </div>
-            </div>
-            <div class="card-custom overflow-hidden shadow-lg bg-white mb-8">
-                <img src="https://i.pinimg.com/564x/68/ea/02/68ea02c1baf2a8477216cf401bb378ae.jpg" class="w-full h-1/2 object-cover" alt="Cinema Image">
-                <div class="px-6 py-4 text-center">
-                <div class="font-bold text-xl mb-2">Les Brigades du Tigre</div>
-                <div class="font-bold text-sm mb-2 italic">Policier</div>
-                <div class="mb-4">
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\alarm-clock-alt-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>2h 5min</p>
-                        </div>
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\actor-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>Jérôme Cornuau</p>
-                        </div>
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\language-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>VF (en Français)</p>
-                        </div>
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\person-team-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>C. Cornillac, D. Kruger, E. Baer</p>
-                        </div>
-                    </div>
-                    <button onclick="openModal()" class="inline-block bg-green-500 text-white py-2 px-4 rounded hover:bg-green-700">Voir plus</button>
-                </div>
-            </div>
-            <div class="card-custom overflow-hidden shadow-lg bg-white mb-8">
-                <img src="https://i.pinimg.com/564x/68/ea/02/68ea02c1baf2a8477216cf401bb378ae.jpg" class="w-full h-1/2 object-cover" alt="Cinema Image">
-                <div class="px-6 py-4 text-center">
-                <div class="font-bold text-xl mb-2">Les Brigades du Tigre</div>
-                <div class="font-bold text-sm mb-2 italic">Policier</div>
-                <div class="mb-4">
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\alarm-clock-alt-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>2h 5min</p>
-                        </div>
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\actor-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>Jérôme Cornuau</p>
-                        </div>
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\language-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>VF (en Français)</p>
-                        </div>
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\person-team-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>C. Cornillac, D. Kruger, E. Baer</p>
-                        </div>
-                    </div>
-                    <button onclick="openModal()" class="inline-block bg-green-500 text-white py-2 px-4 rounded hover:bg-green-700">Voir plus</button>
-                </div>
-            </div>
-            <div class="card-custom overflow-hidden shadow-lg bg-white mb-8">
-                <img src="https://i.pinimg.com/564x/68/ea/02/68ea02c1baf2a8477216cf401bb378ae.jpg" class="w-full h-1/2 object-cover" alt="Cinema Image">
-                <div class="px-6 py-4 text-center">
-                <div class="font-bold text-xl mb-2">Les Brigades du Tigre</div>
-                <div class="font-bold text-sm mb-2 italic">Policier</div>
-                <div class="mb-4">
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\alarm-clock-alt-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>2h 5min</p>
-                        </div>
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\actor-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>Jérôme Cornuau</p>
-                        </div>
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\language-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>VF (en Français)</p>
-                        </div>
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\person-team-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>C. Cornillac, D. Kruger, E. Baer</p>
-                        </div>
-                    </div>
-                    <button onclick="openModal()" class="inline-block bg-green-500 text-white py-2 px-4 rounded hover:bg-green-700">Voir plus</button>
-                </div>
-            </div>
-            <div class="card-custom overflow-hidden shadow-lg bg-white mb-8">
-                <img src="https://i.pinimg.com/564x/68/ea/02/68ea02c1baf2a8477216cf401bb378ae.jpg" class="w-full h-1/2 object-cover" alt="Cinema Image">
-                <div class="px-6 py-4 text-center">
-                <div class="font-bold text-xl mb-2">Les Brigades du Tigre</div>
-                <div class="font-bold text-sm mb-2 italic">Policier</div>
-                <div class="mb-4">
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\alarm-clock-alt-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>2h 5min</p>
-                        </div>
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\actor-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>Jérôme Cornuau</p>
-                        </div>
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\language-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>VF (en Français)</p>
-                        </div>
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\person-team-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>C. Cornillac, D. Kruger, E. Baer</p>
-                        </div>
-                    </div>
-                    <button onclick="openModal()" class="inline-block bg-green-500 text-white py-2 px-4 rounded hover:bg-green-700">Voir plus</button>
-                </div>
-            </div>
-            <div class="card-custom overflow-hidden shadow-lg bg-white mb-8">
-                <img src="https://i.pinimg.com/564x/68/ea/02/68ea02c1baf2a8477216cf401bb378ae.jpg" class="w-full h-1/2 object-cover" alt="Cinema Image">
-                <div class="px-6 py-4 text-center">
-                <div class="font-bold text-xl mb-2">Les Brigades du Tigre</div>
-                <div class="font-bold text-sm mb-2 italic">Policier</div>
-                <div class="mb-4">
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\alarm-clock-alt-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>2h 5min</p>
-                        </div>
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\actor-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>Jérôme Cornuau</p>
-                        </div>
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\language-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>VF (en Français)</p>
-                        </div>
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\person-team-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>C. Cornillac, D. Kruger, E. Baer</p>
-                        </div>
-                    </div>
-                    <button onclick="openModal()" class="inline-block bg-green-500 text-white py-2 px-4 rounded hover:bg-green-700">Voir plus</button>
-                </div>
-            </div>
-            <div class="card-custom overflow-hidden shadow-lg bg-white mb-8">
-                <img src="https://i.pinimg.com/564x/68/ea/02/68ea02c1baf2a8477216cf401bb378ae.jpg" class="w-full h-1/2 object-cover" alt="Cinema Image">
-                <div class="px-6 py-4 text-center">
-                <div class="font-bold text-xl mb-2">Les Brigades du Tigre</div>
-                <div class="font-bold text-sm mb-2 italic">Policier</div>
-                <div class="mb-4">
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\alarm-clock-alt-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>2h 5min</p>
-                        </div>
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\actor-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>Jérôme Cornuau</p>
-                        </div>
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\language-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>VF (en Français)</p>
-                        </div>
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\person-team-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>C. Cornillac, D. Kruger, E. Baer</p>
-                        </div>
-                    </div>
-                    <button onclick="openModal()" class="inline-block bg-green-500 text-white py-2 px-4 rounded hover:bg-green-700">Voir plus</button>
-                </div>
-            </div>
-            <div class="card-custom overflow-hidden shadow-lg bg-white mb-8">
-                <img src="https://i.pinimg.com/564x/68/ea/02/68ea02c1baf2a8477216cf401bb378ae.jpg" class="w-full h-1/2 object-cover" alt="Cinema Image">
-                <div class="px-6 py-4 text-center">
-                <div class="font-bold text-xl mb-2">Les Brigades du Tigre</div>
-                <div class="font-bold text-sm mb-2 italic">Policier</div>
-                <div class="mb-4">
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\alarm-clock-alt-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>2h 5min</p>
-                        </div>
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\actor-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>Jérôme Cornuau</p>
-                        </div>
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\language-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>VF (en Français)</p>
-                        </div>
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\person-team-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>C. Cornillac, D. Kruger, E. Baer</p>
-                        </div>
-                    </div>
-                    <button onclick="openModal()" class="inline-block bg-green-500 text-white py-2 px-4 rounded hover:bg-green-700">Voir plus</button>
-                </div>
-            </div>
-            <div class="card-custom overflow-hidden shadow-lg bg-white mb-8">
-                <img src="https://i.pinimg.com/564x/68/ea/02/68ea02c1baf2a8477216cf401bb378ae.jpg" class="w-full h-1/2 object-cover" alt="Cinema Image">
-                <div class="px-6 py-4 text-center">
-                <div class="font-bold text-xl mb-2">Les Brigades du Tigre</div>
-                <div class="font-bold text-sm mb-2 italic">Policier</div>
-                <div class="mb-4">
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\alarm-clock-alt-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>2h 5min</p>
-                        </div>
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\actor-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>Jérôme Cornuau</p>
-                        </div>
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\language-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>VF (en Français)</p>
-                        </div>
-                        <div class="flex items-start justify-start mb-2">
-                            <img src=".\..\assets\person-team-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>C. Cornillac, D. Kruger, E. Baer</p>
+                            <p>François Cluzet, Omar Sy</p>
                         </div>
                     </div>
                     <button onclick="openModal()" class="inline-block bg-green-500 text-white py-2 px-4 rounded hover:bg-green-700">Voir plus</button>

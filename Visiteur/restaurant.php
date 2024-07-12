@@ -73,42 +73,42 @@
                 </div>
             </div>
             <div class="card-custom overflow-hidden shadow-lg bg-white mb-8">
-                <img src="https://i.pinimg.com/736x/e5/48/7a/e5487a70a493246eb388dc5485d8dade.jpg" class="w-full h-1/2 object-cover" alt="Cinema Image">
+                <img src="https://i.pinimg.com/564x/ff/3e/70/ff3e70f485d5c59886256d78d10c2949.jpg" class="w-full h-1/2 object-cover" alt="Cinema Image">
                 <div class="px-6 py-4 text-center">
-                    <div class="font-bold text-xl mb-2">Le Gourmet</div>
+                    <div class="font-bold text-xl mb-2">La Belle Époque</div>
                     <div class="mb-4">
                         <div class="flex items-start justify-start mb-2">
                             <img src=".\..\assets\person-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>Jean Dupont</p>
+                            <p>Marie Dubois</p>
                         </div>
                         <div class="flex items-start justify-start mb-2">
                             <img src=".\..\assets\position-marker-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Location Icon">
-                            <p>123 Rue de Paris, 75000 Paris, France</p>
+                            <p>45 Avenue des Champs-Élysées, 75008 Paris, France</p>
                         </div>
                         <div class="flex items-start justify-start mb-2">
                             <img src=".\..\assets\note-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Note Icon">
-                            <p>Un restaurant gastronomique situé au cœur de Paris. Nous proposons une cuisine raffinée et élégante avec des produits frais et de saison.</p>
+                            <p>Un restaurant traditionnel offrant une cuisine française classique dans un cadre élégant et historique.</p>
                         </div>
                     </div>
                     <button onclick="openModal()" class="inline-block bg-red-500 text-white py-2 px-4 rounded hover:bg-red-700">Voir la carte</button>
                 </div>
             </div>
             <div class="card-custom overflow-hidden shadow-lg bg-white mb-8">
-                <img src="https://i.pinimg.com/736x/e5/48/7a/e5487a70a493246eb388dc5485d8dade.jpg" class="w-full h-1/2 object-cover" alt="Cinema Image">
+                <img src="https://i.pinimg.com/564x/56/00/f4/5600f4d05244401a0782893785341dbd.jpg" class="w-full h-1/2 object-cover" alt="Cinema Image">
                 <div class="px-6 py-4 text-center">
-                    <div class="font-bold text-xl mb-2">Le Gourmet</div>
+                    <div class="font-bold text-xl mb-2">Chez Pierre</div>
                     <div class="mb-4">
                         <div class="flex items-start justify-start mb-2">
                             <img src=".\..\assets\person-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Person Icon">
-                            <p>Jean Dupont</p>
+                            <p>Pierre Martin</p>
                         </div>
                         <div class="flex items-start justify-start mb-2">
                             <img src=".\..\assets\position-marker-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Location Icon">
-                            <p>123 Rue de Paris, 75000 Paris, France</p>
+                            <p>78 Rue de Rivoli, 75001 Paris, France</p>
                         </div>
                         <div class="flex items-start justify-start mb-2">
                             <img src=".\..\assets\note-svgrepo-com.png" class="w-6 h-6 mr-2" alt="Note Icon">
-                            <p>Un restaurant gastronomique situé au cœur de Paris. Nous proposons une cuisine raffinée et élégante avec des produits frais et de saison.</p>
+                            <p>Un bistrot convivial proposant une cuisine française authentique avec une touche moderne.</p>
                         </div>
                     </div>
                     <button onclick="openModal()" class="inline-block bg-red-500 text-white py-2 px-4 rounded hover:bg-red-700">Voir la carte</button>
