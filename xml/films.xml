@@ -1,10 +1,12 @@
 <?xml version="1.0"?>
 <!-- 1. Arbre XML pour le film "Les Brigades du Tigre"  -->
+<!DOCTYPE Films SYSTEM "films.dtd">
+
 <Films>
     <Film>
         <Titre>Les Brigades du Tigre</Titre>
-        <Duree>2h 5min</Duree>
         <Genre>Policier</Genre>
+        <Duree>2h 5min</Duree>
         <Realisateur>J&#xE9;r&#xF4;me Cornuau</Realisateur>
         <LangueDiffusion>VF (en Fran&#xE7;ais)</LangueDiffusion>
         <Acteurs>
@@ -59,182 +61,10 @@
             </Jour>
         </Horaires>
         <Images>
-            <ImagePrincipale>https://i.pinimg.com/564x/68/ea/02/68ea02c1baf2a8477216cf401bb378ae.jpg</ImagePrincipale>
             <Image>https://i.pinimg.com/564x/68/ea/02/68ea02c1baf2a8477216cf401bb378ae.jpg</Image>
             <Image>https://i.pinimg.com/564x/0e/43/42/0e4342ea9f060af9e7438a6fa943d213.jpg</Image>
+            <ImagePrincipale>https://i.pinimg.com/564x/68/ea/02/68ea02c1baf2a8477216cf401bb378ae.jpg</ImagePrincipale>
         </Images>
     </Film>
-    <Film>
-        <Titre>Le Fabuleux Destin d'Am&#xE9;lie Poulain</Titre>
-        <Duree>2h 2min</Duree>
-        <Genre>Com&#xE9;die</Genre>
-        <Realisateur>Jean-Pierre Jeunet</Realisateur>
-        <LangueDiffusion>VF (en Fran&#xE7;ais)</LangueDiffusion>
-        <Acteurs>
-            <Acteur>Audrey Tautou</Acteur>
-            <Acteur>Mathieu Kassovitz</Acteur>
-            <Acteur>Rufus</Acteur>
-        </Acteurs>
-        <Annee>2001</Annee>
-        <Notes>
-            <Presse>4/5</Presse>
-            <Spectateurs>4.5/5</Spectateurs>
-        </Notes>
-        <Synopsis>Am&#xE9;lie, une jeune serveuse dans un caf&#xE9; de Montmartre, d&#xE9;cide de changer la vie de ceux qui l'entourent.</Synopsis>
-        <Horaires>
-            <Jour nom="Mer">
-                <Heure>14:00</Heure>
-                <Heure>17:00</Heure>
-                <Heure>20:00</Heure>
-            </Jour>
-            <Jour nom="Sam">
-                <Heure>14:00</Heure>
-                <Heure>17:00</Heure>
-                <Heure>20:00</Heure>
-            </Jour>
-            <Jour nom="Jeu">
-                <Heure>14:00</Heure>
-                <Heure>17:00</Heure>
-                <Heure>20:00</Heure>
-            </Jour>
-            <Jour nom="Dim">
-                <Heure>10:00</Heure>
-                <Heure>14:00</Heure>
-                <Heure>17:00</Heure>
-            </Jour>
-        </Horaires>
-        <Images>
-            <ImagePrincipale>https://i.pinimg.com/564x/95/5e/4d/955e4d082a09f5050740fc97e3d938dc.jpg</ImagePrincipale>
-            <Image>https://i.pinimg.com/736x/a4/21/cf/a421cf685111b6efb4b9e1aeb57a7c35.jpg</Image>
-            <Image>https://i.pinimg.com/564x/e9/0c/98/e90c98b211d04ed351625f72899f583c.jpg</Image>
-        </Images>
-    </Film>
-    <Film>
-        <Titre>Intouchables</Titre>
-        <Duree>1h 52min</Duree>
-        <Genre>Drame</Genre>
-        <Realisateur>Olivier Nakache et &#xC9;ric Toledano</Realisateur>
-        <LangueDiffusion>VF (en Fran&#xE7;ais)</LangueDiffusion>
-        <Acteurs>
-            <Acteur>Fran&#xE7;ois Cluzet</Acteur>
-            <Acteur>Omar Sy</Acteur>
-        </Acteurs>
-        <Annee>2011</Annee>
-        <Notes>
-            <Presse>4.5/5</Presse>
-            <Spectateurs>4.8/5</Spectateurs>
-        </Notes>
-        <Synopsis>La relation d'amiti&#xE9; entre un riche t&#xE9;trapl&#xE9;gique et son aide &#xE0; domicile issu de la banlieue.</Synopsis>
-        <Horaires>
-            <Jour nom="Ven">
-                <Heure>14:00</Heure>
-                <Heure>16:40</Heure>
-                <Heure>19:00</Heure>
-                <Heure>21:30</Heure>
-            </Jour>
-            <Jour nom="Sam">
-                <Heure>14:00</Heure>
-                <Heure>16:40</Heure>
-                <Heure>19:00</Heure>
-                <Heure>21:30</Heure>
-            </Jour>
-            <Jour nom="Dim">
-                <Heure>10:00</Heure>
-                <Heure>14:00</Heure>
-                <Heure>16:40</Heure>
-                <Heure>19:00</Heure>
-            </Jour>
-        </Horaires>
-        <Images>
-            <ImagePrincipale>https://i.pinimg.com/564x/22/fd/22/22fd223f016b3d61d53771862ebb4968.jpg</ImagePrincipale>
-            <Image>https://i.pinimg.com/564x/de/69/be/de69be04c2aee81430c62eb06e24d05a.jpg</Image>
-            <Image>https://i.pinimg.com/564x/6f/11/96/6f1196105319908213cfafd4310cedc4.jpg</Image>
-        </Images>
-    </Film>
-    <Film>
-        <Titre>La La Land</Titre>
-        <Duree>2h 8min</Duree>
-        <Genre>Musical</Genre>
-        <Realisateur>Damien Chazelle</Realisateur>
-        <LangueDiffusion>VO (en Anglais)</LangueDiffusion>
-        <Acteurs>
-            <Acteur>Ryan Gosling</Acteur>
-            <Acteur>Emma Stone</Acteur>
-        </Acteurs>
-        <Annee>2016</Annee>
-        <Notes>
-            <Presse>4.2/5</Presse>
-            <Spectateurs>4.3/5</Spectateurs>
-        </Notes>
-        <Synopsis>Une histoire d'amour entre une actrice en herbe et un pianiste de jazz &#xE0; Los Angeles.</Synopsis>
-        <Horaires>
-            <Jour nom="Jeu">
-                <Heure>14:00</Heure>
-                <Heure>17:00</Heure>
-                <Heure>20:00</Heure>
-            </Jour>
-            <Jour nom="Ven">
-                <Heure>14:00</Heure>
-                <Heure>17:00</Heure>
-                <Heure>20:00</Heure>
-            </Jour>
-            <Jour nom="Sam">
-                <Heure>10:00</Heure>
-                <Heure>14:00</Heure>
-                <Heure>17:00</Heure>
-                <Heure>20:00</Heure>
-            </Jour>
-            <Jour nom="Dim">
-                <Heure>10:00</Heure>
-                <Heure>14:00</Heure>
-                <Heure>17:00</Heure>
-                <Heure>20:00</Heure>
-            </Jour>
-        </Horaires>
-        <Images>
-            <ImagePrincipale>https://i.pinimg.com/564x/a3/fe/19/a3fe1953058d51294b8c061a9f76ead7.jpg</ImagePrincipale>
-            <Image>https://i.pinimg.com/564x/39/3e/74/393e748b25e97b1e356bb63aa0443721.jpg</Image>
-            <Image>https://i.pinimg.com/564x/fa/2d/77/fa2d772658d3c30db5ca9373d9595210.jpg</Image>
-        </Images>
-    </Film>
-    <Film>
-        <Titre>Parasite</Titre>
-        <Duree>2h 12min</Duree>
-        <Genre>Thriller</Genre>
-        <Realisateur>Bong Joon-ho</Realisateur>
-        <LangueDiffusion>VO (en Cor&#xE9;en)</LangueDiffusion>
-        <Acteurs>
-            <Acteur>Song Kang-ho</Acteur>
-            <Acteur>Lee Sun-kyun</Acteur>
-        </Acteurs>
-        <Annee>2019</Annee>
-        <Notes>
-            <Presse>4.6/5</Presse>
-            <Spectateurs>4.7/5</Spectateurs>
-        </Notes>
-        <Synopsis>La rencontre entre deux familles de classes sociales tr&#xE8;s diff&#xE9;rentes.</Synopsis>
-        <Horaires>
-            <Jour nom="Mer">
-                <Heure>14:00</Heure>
-                <Heure>17:00</Heure>
-                <Heure>20:00</Heure>
-            </Jour>
-            <Jour nom="Ven">
-                <Heure>14:00</Heure>
-                <Heure>17:00</Heure>
-                <Heure>20:00</Heure>
-            </Jour>
-            <Jour nom="Dim">
-                <Heure>10:00</Heure>
-                <Heure>14:00</Heure>
-                <Heure>17:00</Heure>
-                <Heure>20:00</Heure>
-            </Jour>
-        </Horaires>
-        <Images>
-            <ImagePrincipale>https://i.pinimg.com/564x/e6/de/03/e6de035cd3307b513e9bfe88a1457826.jpg</ImagePrincipale>
-            <Image>https://i.pinimg.com/564x/c4/e0/9d/c4e09d45f070ff6776ed4a125cf728ee.jpg</Image>
-            <Image>https://i.pinimg.com/564x/72/ec/eb/72ecebfc66ad5068ccda8ad2b62942ee.jpg</Image>
-        </Images>
-    </Film>
+    <!-- <Film id="668f25e783207"><Titre>Iron man</Titre><Duree>2h 30</Duree><Genre>Action</Genre><Realisateur>James Gunn</Realisateur><Annee>2008</Annee><Synopsis>aegrwethr</Synopsis></Film> -->
 </Films>

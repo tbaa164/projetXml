@@ -1,0 +1,27 @@
+.oswald {
+    font-family: 'Oswald', cursive;
+}
+.welcome-text {
+    font-size: 4rem;
+    color: #343a40;
+    font-family: 'Brush Script MT', cursive;
+}
+.card-custom {
+    height: 65vh;
+    width: 25vw;
+}
+.modal-custom {
+    width: 70vw;
+}
+.modal {
+    display: none;
+}
+.modal-active {
+    display: flex;
+}
+.table-container {
+    max-height: 50vh; /* Vous pouvez ajuster la hauteur maximale selon vos besoins */
+    overflow-y: auto;
+    width: 100%;
+}
+
