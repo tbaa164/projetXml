@@ -48,13 +48,13 @@
                             echo "<td>" . htmlspecialchars($restaurant->restaurateur) . "</td>";
                             echo "<td>" . htmlspecialchars($restaurant->description) . "</td>";
                             echo '<td>
-                                    <button class="btn btn-sm  edit-restaurant-btn" data-id="' . $restaurant->attributes()->id . '">
+                                    <button class="btn btn-sm view-restaurant-btn" data-id="' . $restaurant->attributes()->id . '">
                                         <img src="../assets/eye-alt-svgrepo-com.png" alt="" width="20">
                                     </button>
-                                     <button class="btn btn-sm  edit-restaurant-btn" data-id="' . $restaurant->attributes()->id . '">
+                                     <button class="btn btn-sm edit-restaurant-btn" data-id="' . $restaurant->attributes()->id . '">
                                         <img src="../assets/edit-4-svgrepo-com.png" alt="" width="20">
                                     </button>
-                                    <button class="btn btn-sm  delete-restaurant-btn" data-id="' . $restaurant->attributes()->id . '">
+                                    <button class="btn btn-sm delete-restaurant-btn" data-id="' . $restaurant->attributes()->id . '">
                                         <img src="../assets/delete-svgrepo-com.png" alt="" width="20">
                                     </button>
                                 </td>';
@@ -150,6 +150,30 @@
         </div>
     </div>
 
+    <!-- Modale de confirmation de suppression de restaurant -->
+    <div id="deleteRestaurantModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form id="deleteRestaurantForm" method="POST">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Supprimer le Restaurant</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Êtes-vous sûr de vouloir supprimer ce restaurant?</p>
+                        <div id="deleteRestaurantDetails">
+                            <!-- Les détails du restaurant seront affichés ici -->
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                        <button type="button" id="confirmDeleteBtn" class="btn btn-danger">Supprimer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!-- Message -->
     <div id="message"></div>
 
@@ -190,48 +214,79 @@
                 });
             }
 
+            // Fonction pour récupérer les détails du restaurant avant de le supprimer
+            function confirmDeleteRestaurant(id) {
+            fetch(`../CRUD restaurant/get_restaurant.php?id=${id}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erreur HTTP ' + response.status);
+                }
+                return response.json();
+            })
+            .then(restaurant => {
+                if (restaurant && restaurant.id) {
+                    // Afficher les détails du restaurant dans la modale de suppression
+                    $('#deleteRestaurantDetails').html(`
+                        <p><strong>Nom:</strong> ${restaurant.Nom}</p>
+                        <p><strong>Adresse:</strong> ${restaurant.Adresse}</p>
+                        <p><strong>Restaurateur:</strong> ${restaurant.Restaurateur}</p>
+                        <p><strong>Description:</strong> ${restaurant.Description}</p>
+                    `);
+
+                    // Confirmer la suppression
+                    $('#confirmDeleteBtn').off('click').on('click', function() {
+                        deleteRestaurant(id);
+                    });
+
+                    // Afficher la modale de confirmation de suppression
+                    $('#deleteRestaurantModal').modal('show');
+                } else {
+                    console.error('Erreur: les données du restaurant sont manquantes.');
+                    alert('Erreur: les données du restaurant sont manquantes.');
+                }
+            })
+            .catch(error => {
+                console.error('Erreur:', error);
+                alert('Erreur lors de la récupération des données du restaurant.');
+            });
+        }
+
+         function deleteRestaurant(id) {
+            // Envoyer la requête POST pour la suppression
+            fetch('../CRUD restaurant/delete_restaurant.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ id: id }),
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erreur HTTP ' + response.status);
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Afficher le message de succès ou d'erreur
+                alert(data.message);
+                // Recharger la page ou mettre à jour la liste des restaurants après suppression
+                window.location.reload(); // Vous pouvez ajuster cette partie en fonction de votre besoin
+            })
+            .catch(error => {
+                console.error('Erreur:', error);
+                alert('Erreur lors de la suppression du restaurant.');
+            });
+        }
             // Associer l'événement de clic aux boutons de modification
-            $('.edit-restaurant-btn').click(function() {
+            $(document).on('click', '.edit-restaurant-btn', function() {
                 const restaurantId = $(this).data('id');
                 editRestaurant(restaurantId);
             });
 
-            // Fonction pour supprimer un restaurant
-            function deleteRestaurant(id) {
-                if (confirm('Êtes-vous sûr de vouloir supprimer ce restaurant?')) {
-                    fetch('../CRUD restaurant/delete_restaurant.php', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/x-www-form-urlencoded'
-                        },
-                        body: `id=${id}`
-                    })
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error('Erreur HTTP ' + response.status);
-                        }
-                        return response.json();
-                    })
-                    .then(data => {
-                        if (data && data.success) {
-                            // Actualiser la page pour refléter la suppression
-                            location.reload();
-                        } else {
-                            console.error('Erreur: ' + data.message);
-                            alert('Erreur: ' + data.message);
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Erreur:', error);
-                        alert('Erreur lors de la suppression du restaurant.');
-                    });
-                }
-            }
-
             // Associer l'événement de clic aux boutons de suppression
-            $('.delete-restaurant-btn').click(function() {
+            $(document).on('click', '.delete-restaurant-btn', function() {
                 const restaurantId = $(this).data('id');
-                deleteRestaurant(restaurantId);
+                confirmDeleteRestaurant(restaurantId);
             });
         });
     </script>
